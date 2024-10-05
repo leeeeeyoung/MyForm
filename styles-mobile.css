@@ -1,107 +1,124 @@
 /* 基本設置 */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #ffffff;
+    background-color: #f8f9fa;
     margin: 0;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
-    color: #202124;
+    color: #212121;
 }
 
-/* 標題設計 */
-h1 {
-    font-size: 28px; /* 移動端適合的標題大小 */
-    margin-bottom: 15px;
-    text-align: center;
-    color: #202124;
-}
-
-h2 {
-    font-size: 22px;
-    margin-bottom: 15px;
-    text-align: center;
-    color: #202124;
-}
-
-/* 基本資料表單設計 */
+/* 基本資料輸入區使用 Material Design 風格 */
 #basic-info-form {
-    background-color: #ffffff;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 350px; /* 限制寬度以適應移動設備 */
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 350px;
+    margin-bottom: 20px;
     text-align: center;
-    box-sizing: border-box;
 }
 
-/* 表單元素設計 */
-input[type="text"],
-input[type="email"],
-input[type="number"] {
+/* 基本資料輸入區的標題 */
+#basic-info-form h1 {
+    font-size: 24px;
+    margin-bottom: 16px;
+    color: #212121;
+    text-align: center;
+}
+
+/* 電子郵件和駕駛資料的輸入框 */
+#basic-info-form label {
+    font-size: 14px;
+    color: #424242;
+    margin-bottom: 8px;
+    display: block;
+}
+
+#basic-info-form input, #basic-info-form select {
     width: 100%;
     padding: 10px;
-    margin-bottom: 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
     box-sizing: border-box;
+    font-size: 14px;
+    background-color: #fafafa;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="number"]:focus {
-    border-color: #007bff;
-    outline: none;
-}
-
-/* 按鈕容器設計 */
-button,
-.radio-option-button {
-    padding: 10px 20px;
+/* 提交按鈕的設計 */
+#submit-info-button {
+    padding: 12px 24px;
     font-size: 16px;
+    background-color: #1E88E5;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    width: 100%;
+    max-width: 250px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    margin: 0 auto;
+    display: block;
+}
+
+#submit-info-button:hover {
+    background-color: #1565C0;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* 保持原有設計風格的其他區域 */
+#main-menu, #quiz-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* 一般按鈕的設計 */
+button {
+    padding: 12px 28px;
+    font-size: 18px;
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s;
-    width: 100%;
-    max-width: 250px;
-    margin-top: 15px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+    margin: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
-button:hover,
-.radio-option-button:hover {
+button:hover {
     background-color: #0056b3;
 }
 
-.hidden {
-    display: none;
-}
-
-/* 測驗容器設計 */
+/* 測驗區域的樣式 */
 #quiz-container {
-    background-color: #ffffff;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
     width: 100%;
-    max-width: 350px;
     text-align: center;
 }
 
-/* 選項容器設計 */
+/* 按鈕選項區域設計 */
 #options-container {
     display: flex;
-    flex-direction: column;
-    margin-top: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 10px;
 }
 
@@ -112,61 +129,105 @@ button:hover,
 }
 
 video {
+    border-radius: 8px;
     width: 100%;
-    height: auto;
-    border-radius: 4px;
+    height: 250px;
 }
 
-/* 問題區塊設計 */
-.question-block {
-    margin-bottom: 20px;
-    text-align: left;
+/* 輸入表單的 hover 效果 */
+#basic-info-form input:hover, #basic-info-form select:hover {
+    border-color: #1E88E5;
 }
 
-/* 問題標籤設計 */
-.question-block label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
+/* 按鈕在測驗區域的樣式 */
+#quiz-container button {
+    padding: 10px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#quiz-container button:hover {
+    background-color: #218838;
+}
+
+/* 隱藏區域 */
+.hidden {
+    display: none;
 }
 
 /* 按鈕選項設計 */
-.radio-option-button {
-    padding: 8px;
-    font-size: 16px;
+.button-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.button-options button {
+    padding: 10px 16px;
+    font-size: 14px;
     color: #ffffff;
     background-color: #007bff;
     border: none;
-    border-radius: 4px;
+    border-radius: 20px;
     cursor: pointer;
-    width: 100%;
-    max-width: 250px;
-    text-align: center;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.radio-option-button:hover {
+.button-options button:hover {
     background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-.radio-option-button.active {
-    background-color: #0056b3;
+.button-options button:active {
+    transform: translateY(1px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* 文本框容器設計 */
+.button-options button.active {
+    background-color: #004085;
+}
+
 .textarea-container {
     margin-top: 10px;
 }
 
 textarea {
     width: 100%;
-    padding: 10px;
-    font-size: 16px;
+    padding: 8px;
+    font-size: 14px;
     box-sizing: border-box;
     resize: vertical;
+    border-radius: 6px;
+    border: 1px solid #ccc;
 }
 
 /* 結果區設計 */
+#result-container {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.question-block {
+    margin-bottom: 15px;
+}
+
+.question-block label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
 #result-container {
     margin: 20px auto;
     text-align: center;
@@ -183,8 +244,7 @@ textarea {
     margin-bottom: 20px;
 }
 
-#result-table th,
-#result-table td {
+#result-table th, #result-table td {
     border: 1px solid #ddd;
     padding: 8px;
 }
@@ -216,11 +276,11 @@ textarea {
 
 /* 樣式化表格 */
 .styled-table {
-    margin: 10px auto;
+    margin: 20px auto;
     border-collapse: collapse;
     font-size: 14px;
     min-width: 100%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 
 .styled-table td {
@@ -239,7 +299,7 @@ textarea {
 }
 
 .styled-table tr:hover {
-    background-color: #e0e0e0;
+    background-color: #f1f1f1;
 }
 
 .styled-table td:first-child {
