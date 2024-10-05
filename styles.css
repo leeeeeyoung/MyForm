@@ -85,6 +85,7 @@ body {
     margin-top: 20px;
 }
 
+/* 一般按鈕的設計 */
 button {
     padding: 16px 36px;
     font-size: 24px;
@@ -112,6 +113,7 @@ button:hover {
     text-align: center;
 }
 
+/* 按鈕選項區域設計 */
 #options-container {
     display: flex;
     justify-content: center;
@@ -119,6 +121,7 @@ button:hover {
     gap: 20px;
 }
 
+/* 視頻容器設計 */
 #video-container {
     margin-bottom: 20px;
     width: 100%;
@@ -155,12 +158,53 @@ video {
     display: none;
 }
 
+/* 按鈕選項設計 */
+.button-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.button-options button {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button-options button:hover {
+    background-color: #0056b3;
+}
+
+.button-options button.active {
+    background-color: #004085; /* 點擊後的狀態顏色 */
+}
+
+.textarea-container {
+    margin-top: 10px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+/* 結果區設計 */
 #result-container {
-    margin-top: 40px;  /* 與其他內容保持距離 */
+    margin-top: 40px;
     padding: 20px;
     background-color: #f8f9fa;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 增加一點陰影讓結果區更明顯 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .question-block {
@@ -168,17 +212,9 @@ video {
 }
 
 .question-block label {
-    display: block;  /* 將label顯示在textarea上方 */
-    margin-bottom: 5px;  /* 與textarea保持一些距離 */
-    font-weight: bold;  /* 可以選擇讓問題文字加粗 */
-}
-
-textarea {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    box-sizing: border-box;  /* 確保padding不影響整體寬度 */
-    resize: vertical;  /* 允許使用者垂直調整textarea的大小 */
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
 #result-container {
@@ -227,66 +263,42 @@ textarea {
     margin-top: 20px;
 }
 
+/* 樣式化表格 */
 .styled-table {
-    margin: 20px auto; /* 使表格在畫面中左右置中 */
-    border-collapse: collapse; /* 移除表格邊框之間的間隙 */
+    margin: 20px auto;
+    border-collapse: collapse;
     font-size: 18px;
     min-width: 400px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
 }
 
 .styled-table td {
-    padding: 12px 15px; /* 單元格內邊距 */
-    border: 1px solid #ddd; /* 單元格邊框 */
-    text-align: center; /* 文字置中 */
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
 }
 
 .styled-table tr {
-    background-color: #f3f3f3; /* 單元格背景顏色 */
+    background-color: #f3f3f3;
     color: #333;
 }
 
 .styled-table tr:nth-child(even) {
-    background-color: #f9f9f9; /* 偶數行的背景顏色 */
+    background-color: #f9f9f9;
 }
 
 .styled-table tr:hover {
-    background-color: #f1f1f1; /* 滑鼠懸停時的背景色 */
+    background-color: #f1f1f1;
 }
 
 .styled-table td:first-child {
-    border-left: 0; /* 移除左邊框，讓表格更美觀 */
+    border-left: 0;
 }
 
 .styled-table td:last-child {
-    border-right: 0; /* 移除右邊框 */
+    border-right: 0;
 }
-
-
-.button-options button {
-    margin: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    background-color: #f0f0f0;
-    transition: background-color 0.3s;
-}
-
-.button-options button:hover {
-    background-color: #dcdcdc;
-}
-
-.button-options button:active {
-    background-color: #bbb;
-}
-
-
-
-
 
 .required {
     color: red;
 }
-
