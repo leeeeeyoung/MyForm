@@ -1,22 +1,22 @@
 /* 基本設置 */
 body {
-    font-family: 'Roboto', sans-serif; /* 使用 Google 的字型 Roboto */
-    background-color: #ffffff; /* 更接近 Google 的白色背景 */
+    font-family: 'Roboto', sans-serif;
+    background-color: #ffffff;
     margin: 0;
-    padding: 20px; /* 增加內邊距以避免內容擁擠 */
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
-    color: #202124; /* 更接近 Google 的黑色文本顏色 */
+    color: #202124;
 }
 
 /* 標題設計 */
 h1 {
-    font-size: 32px; /* 增加標題字體大小 */
-    margin-bottom: 20px; /* 增加間距 */
+    font-size: 32px;
+    margin-bottom: 20px;
     text-align: center;
-    color: #202124; /* Google 標準文本顏色 */
+    color: #202124;
 }
 
 h2 {
@@ -31,54 +31,54 @@ h2 {
     background-color: #ffffff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 更細緻的陰影 */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px; /* 限制寬度以適應手機 */
+    max-width: 400px;
     text-align: center;
-    box-sizing: border-box; /* 確保內邊距和邊框包含在元素的總寬度和高度內 */
+    box-sizing: border-box;
 }
 
 /* 表單元素設計 */
 input[type="text"],
 input[type="email"],
-input[type="number"],
-select {
+input[type="number"] {
     width: 100%;
     padding: 12px;
     margin-bottom: 16px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    box-sizing: border-box; /* 確保內邊距和邊框包含在元素的總寬度和高度內 */
+    box-sizing: border-box;
 }
 
 input[type="text"]:focus,
 input[type="email"]:focus,
-input[type="number"]:focus,
-select:focus {
-    border-color: #007bff; /* 聚焦時顯示藍色邊框 */
-    outline: none; /* 移除默認的聚焦樣式 */
+input[type="number"]:focus {
+    border-color: #007bff;
+    outline: none;
 }
 
 /* 按鈕容器設計 */
-button {
+button,
+.radio-option-button {
     padding: 12px 24px;
     font-size: 16px;
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 4px; /* 更小的圓角 */
+    border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
     width: 100%;
     max-width: 300px;
     margin-top: 20px;
-    display: block; /* 確保按鈕作為塊級元素 */
+    display: block;
     margin-left: auto;
     margin-right: auto;
-    text-align: center; /* 保證文字居中 */
+    text-align: center;
 }
 
-button:hover {
+button:hover,
+.radio-option-button:hover {
     background-color: #0056b3;
 }
 
@@ -118,31 +118,62 @@ video {
 }
 
 #result-container {
-    margin-top: 40px;  /* 與其他內容保持距離 */
+    margin-top: 40px;
     padding: 20px;
     background-color: #f8f9fa;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 增加一點陰影讓結果區更明顯 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+/* 問題區塊設計 */
 .question-block {
     margin-bottom: 20px;
+    text-align: left;
 }
 
+/* 問題標籤設計 */
 .question-block label {
-    display: block;  /* 將label顯示在textarea上方 */
-    margin-bottom: 5px;  /* 與textarea保持一些距離 */
-    font-weight: bold;  /* 可以選擇讓問題文字加粗 */
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* 按鈕選項設計 */
+.radio-option-button {
+    padding: 10px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.radio-option-button:hover {
+    background-color: #0056b3;
+}
+
+.radio-option-button.active {
+    background-color: #0056b3; /* 點擊後按鈕的狀態 */
+}
+
+.textarea-container {
+    margin-top: 10px;
 }
 
 textarea {
     width: 100%;
     padding: 10px;
     font-size: 16px;
-    box-sizing: border-box;  /* 確保padding不影響整體寬度 */
-    resize: vertical;  /* 允許使用者垂直調整textarea的大小 */
+    box-sizing: border-box;
+    resize: vertical;
 }
 
+/* 結果區設計 */
 #result-container {
     margin: 20px auto;
     text-align: center;
@@ -159,7 +190,8 @@ textarea {
     margin-bottom: 20px;
 }
 
-#result-table th, #result-table td {
+#result-table th,
+#result-table td {
     border: 1px solid #ddd;
     padding: 12px;
 }
@@ -189,16 +221,17 @@ textarea {
     margin-top: 20px;
 }
 
+/* 樣式化表格 */
 .styled-table {
-    margin: 10px auto; /* 在手機上縮小邊距，使內容居中 */
+    margin: 10px auto;
     border-collapse: collapse;
-    font-size: 14px; /* 字體大小稍微縮小，適合小螢幕 */
-    min-width: 100%; /* 在手機上表格寬度為全寬 */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* 輕微陰影效果 */
+    font-size: 14px;
+    min-width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
 .styled-table td {
-    padding: 10px; /* 減少單元格內邊距，適合手機尺寸 */
+    padding: 10px;
     border: 1px solid #ddd;
     text-align: center;
 }
@@ -213,7 +246,7 @@ textarea {
 }
 
 .styled-table tr:hover {
-    background-color: #e0e0e0; /* 手機上滑鼠懸停效果變弱，避免手機交互干擾 */
+    background-color: #e0e0e0;
 }
 
 .styled-table td:first-child {
