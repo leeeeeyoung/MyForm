@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const frequency = document.getElementById("frequency").value;
         const experience = document.getElementById("experience").value;
         const commute = document.getElementById("commute").value;
-    
+
         if (email && gender && age && frequency && experience && commute) {
             userInfo.email = email;
             userInfo.gender = gender;
@@ -165,44 +165,12 @@ document.addEventListener("DOMContentLoaded", () => {
             userInfo.frequency = frequency;
             userInfo.experience = experience;
             userInfo.commute = commute;
-    
-            // 亂數產生 0 或 1
-            const randomNum = Math.floor(Math.random() * 9);
-    
-            // 根據亂數結果決定 API URL
-            // if (randomNum == 0) {
-            //     apiEndpoint = "https://formspree.io/f/mblrbdal";
-            // }
-            // else if (randomNum == 1) {
-            //     apiEndpoint = "https://formspree.io/f/mjkbzwwa";
-            // }
-            // else if (randomNum == 2) {
-            //     apiEndpoint = "https://formspree.io/f/xovabdwa";
-            // }
-            // else if (randomNum == 3) {
-            //     apiEndpoint = "https://formspree.io/f/mgvwqkye";
-            // }
-            // else if (randomNum == 4) {
-            //     apiEndpoint = "https://formspree.io/f/mpwandrw";
-            // }
-            // else if (randomNum == 5) {
-            //     apiEndpoint = "https://formspree.io/f/mkgwerbo";
-            // }
-            // else if (randomNum == 6) {
-            //     apiEndpoint = "https://formspree.io/f/mwpezobo";
-            // }
-            // else if (randomNum == 7) {
-            //     apiEndpoint = "https://formspree.io/f/mrbzdqkk";
-            // } else {
-            //     apiEndpoint = "https://formspree.io/f/xldrvbjv";
-            // }
-            
+
             apiEndpoint = "https://formspree.io/f/mblrbdal";
 
-            // 更新表單的 action 屬性
             const form = document.getElementById("basic-info-form");
             form.action = apiEndpoint;
-    
+
             basicInfoForm.classList.add("hidden");
             mainMenu.classList.remove("hidden");
         } else {
@@ -219,79 +187,68 @@ document.addEventListener("DOMContentLoaded", () => {
         loadQuestion(currentQuestionIndex);
     };
 
-function loadQuestion(index) {
-    const currentQuestion = questions[index];
-    let hasOptionsShown = false;  // 追蹤選項是否已顯示
-    let firstplay = false;
+    function loadQuestion(index) {
+        const currentQuestion = questions[index];
+        let hasOptionsShown = false;
+        let firstplay = false;
 
-    // 設定題目和選項容器
-    questionElement.textContent = currentQuestion.question;
-    optionsContainer.innerHTML = "";  // 清空選項
-    optionsContainer.classList.add("hidden");  // 隱藏選項按鈕
+        questionElement.textContent = currentQuestion.question;
+        optionsContainer.innerHTML = "";
+        optionsContainer.classList.add("hidden");
 
-    // 設定影片屬性
-    videoElement.src = currentQuestion.video; // 動態設定影片來源
-    videoElement.setAttribute("autoplay", "true");
-    videoElement.setAttribute("muted", "true"); // 確保靜音以支持自動播放
-    videoElement.setAttribute("playsinline", "true"); // 防止 iPhone Safari 全螢幕播放
-    videoElement.setAttribute("webkit-playsinline", "true"); // 防止 iPhone Safari 全螢幕播放
+        videoElement.src = currentQuestion.video;
+        videoElement.setAttribute("autoplay", "true");
+        videoElement.setAttribute("muted", "true");
+        videoElement.setAttribute("playsinline", "true");
+        videoElement.setAttribute("webkit-playsinline", "true");
 
-    // 當影片開始真正播放幀時
-    videoElement.onplaying = () => {
-        if (!firstplay) {
-            startTime = new Date();
-            firstplay = true;
+        videoElement.onplaying = () => {
+            if (!firstplay) {
+                startTime = new Date();
+                firstplay = true;
 
-            // 使用 setInterval 檢查影片播放時間是否達到 3 秒
-            const intervalId = setInterval(() => {
-                if (videoElement.currentTime >= 3) {
-                    clearInterval(intervalId); // 停止計時
-                    if (!hasOptionsShown) {
-                        currentQuestion.options.forEach((option, i) => {
-                            const button = document.createElement("button");
-                            button.textContent = option;
-                            button.onclick = () => selectOption(i);
-                            optionsContainer.appendChild(button);
-                        });
-                        optionsContainer.classList.remove("hidden");  // 顯示選項按鈕
-                        hasOptionsShown = true;  // 標記選項已經顯示
+                const intervalId = setInterval(() => {
+                    if (videoElement.currentTime >= 3) {
+                        clearInterval(intervalId);
+                        if (!hasOptionsShown) {
+                            currentQuestion.options.forEach((option, i) => {
+                                const button = document.createElement("button");
+                                button.textContent = option;
+                                button.onclick = () => selectOption(i);
+                                optionsContainer.appendChild(button);
+                            });
+                            optionsContainer.classList.remove("hidden");
+                            hasOptionsShown = true;
+                        }
                     }
-                }
-            }, 100); // 每 100 毫秒檢查一次影片播放時間
-        }
-    };
+                }, 100);
+            }
+        };
 
-    // 當影片播放結束時
-    videoElement.onended = () => {
-        videoEndTime = new Date();
+        videoElement.onended = () => {
+            videoEndTime = new Date();
 
-        // 確保選項按鈕已經出現
-        if (!hasOptionsShown) {
-            currentQuestion.options.forEach((option, i) => {
-                const button = document.createElement("button");
-                button.textContent = option;
-                button.onclick = () => selectOption(i);
-                optionsContainer.appendChild(button);
-            });
-            optionsContainer.classList.remove("hidden");  // 顯示選項按鈕
-            hasOptionsShown = true;
-        }
-    };
+            if (!hasOptionsShown) {
+                currentQuestion.options.forEach((option, i) => {
+                    const button = document.createElement("button");
+                    button.textContent = option;
+                    button.onclick = () => selectOption(i);
+                    optionsContainer.appendChild(button);
+                });
+                optionsContainer.classList.remove("hidden");
+                hasOptionsShown = true;
+            }
+        };
 
-    // 手動觸發播放，以確保自動播放在一些情況下正常工作
-    videoElement.play().catch((error) => {
-        console.error("影片無法自動播放: ", error);
-    });
-}
-
-
-
-    
+        videoElement.play().catch((error) => {
+            console.error("影片無法自動播放: ", error);
+        });
+    }
 
     function selectOption(selectedIndex) {
         const endTime = new Date();
         const timeTaken = (endTime - startTime) / 1000 - 3.0;
-    
+
         const correct = selectedIndex === questions[currentQuestionIndex].answer;
         answers.push({
             question: `第 ${currentQuestionIndex + 1} 題`,
@@ -299,123 +256,130 @@ function loadQuestion(index) {
             correct: correct,
             timeTaken: timeTaken.toFixed(2)
         });
-    
+
         currentQuestionIndex++;
         if (currentQuestionIndex < questions.length) {
             loadQuestion(currentQuestionIndex);
         } else {
-            showOpenEndedQuestions();  // 顯示開放性問題而不是直接顯示結果
+            showOpenEndedQuestions();
         }
     }
 
     function showOpenEndedQuestions() {
         document.getElementById("quiz-container").classList.add("hidden");
         document.getElementById("open-ended-questions").classList.remove("hidden");
-    
+
+        const openEndedQuestions = document.querySelectorAll('.question-block');
+
+        openEndedQuestions.forEach((block, index) => {
+            const radioButtons = block.querySelectorAll('input[type="radio"]');
+            const textarea = block.querySelector('textarea');
+
+            radioButtons.forEach((button) => {
+                button.onclick = () => {
+                    if (button.value === 'other') {
+                        textarea.classList.remove('hidden');
+                    } else {
+                        textarea.classList.add('hidden');
+                    }
+                };
+            });
+        });
+
         const submitOpenEndedButton = document.getElementById("submit-open-ended-button");
         submitOpenEndedButton.onclick = () => {
-            const u1 = document.getElementById("understand1").value;
-            const u2 = document.getElementById("understand2").value;
-            const u3 = document.getElementById("understand3").value;
-            const u4 = document.getElementById("understand4").value;
-            const u5 = document.getElementById("understand5").value;
-            const u6 = document.getElementById("understand6").value;
-            const u7 = document.getElementById("understand7").value;
-            const u8 = document.getElementById("understand8").value;
-            if (u1 && u2 && u3 && u4 && u5 && u6 && u7 && u8) {
-                userInfo.openEndedAnswers = {
-                    u1: document.getElementById("understand1").value,
-                    u2: document.getElementById("understand2").value,
-                    u3: document.getElementById("understand3").value,
-                    u4: document.getElementById("understand4").value,
-                    u5: document.getElementById("understand5").value,
-                    u6: document.getElementById("understand6").value,
-                    u7: document.getElementById("understand7").value,
-                    u8: document.getElementById("understand8").value,
-                    q1: document.getElementById("open-ended-q1").value,
-                    q2: document.getElementById("open-ended-q2").value,
-                    q3: document.getElementById("open-ended-q3").value,
-                    q4: document.getElementById("open-ended-q4").value,
-                    q5: document.getElementById("open-ended-q5").value,
-                    q6: document.getElementById("open-ended-q6").value,
-                    q7: document.getElementById("open-ended-q7").value,
-                    q8: document.getElementById("open-ended-q8").value,
-                };
-                document.getElementById("open-ended-questions").classList.add("hidden");
-                showResults();  // 在填寫完開放性問題後顯示結果
+            let allAnswered = true;
+            let openEndedAnswers = {};
 
+            openEndedQuestions.forEach((block, index) => {
+                const radioButtons = block.querySelectorAll('input[type="radio"]');
+                const textarea = block.querySelector('textarea');
+                let selectedValue;
+
+                radioButtons.forEach((button) => {
+                    if (button.checked) {
+                        selectedValue = button.value;
+                    }
+                });
+
+                if (!selectedValue) {
+                    allAnswered = false;
+                } else {
+                    if (selectedValue === 'other') {
+                        openEndedAnswers[`u${index + 1}`] = textarea.value;
+                    } else {
+                        openEndedAnswers[`u${index + 1}`] = selectedValue;
+                    }
+                }
+            });
+
+            if (allAnswered) {
+                userInfo.openEndedAnswers = openEndedAnswers;
+                document.getElementById("open-ended-questions").classList.add("hidden");
+                showResults();
             } else {
-                alert("請點選完成所有下拉式選單！");
+                alert("請完成所有問題的回答！");
             }
         };
     }
 
     function showResults() {
         questionElement.textContent = "測驗結束！";
-        optionsContainer.innerHTML = "";  // 清空選項容器
-        videoElement.classList.add("hidden");  // 隱藏影片
-        document.getElementById("result-container").classList.remove("hidden");  // 顯示結果容器
-    
+        optionsContainer.innerHTML = "";
+        videoElement.classList.add("hidden");
+        document.getElementById("result-container").classList.remove("hidden");
+
         const resultTableBody = document.querySelector("#result-table tbody");
-        resultTableBody.innerHTML = "";  // 清空舊的結果
-    
+        resultTableBody.innerHTML = "";
+
         let correctCount = 0;
-    
+
         answers.forEach((answer, index) => {
             const row = document.createElement("tr");
-    
-            // 題號
+
             const questionNumberCell = document.createElement("td");
             questionNumberCell.textContent = `第 ${index + 1} 題`;
             row.appendChild(questionNumberCell);
-    
-            // 您的選擇
+
             const selectedOptionCell = document.createElement("td");
             selectedOptionCell.textContent = answer.selectedOption;
             row.appendChild(selectedOptionCell);
-    
-            // 正確答案
+
             const correctOptionCell = document.createElement("td");
             correctOptionCell.textContent = questions[index].options[questions[index].answer];
             row.appendChild(correctOptionCell);
-    
-            // 用時
+
             const timeTakenCell = document.createElement("td");
             timeTakenCell.textContent = answer.timeTaken + " 秒";
             row.appendChild(timeTakenCell);
-    
+
             resultTableBody.appendChild(row);
-    
+
             if (answer.correct) {
                 correctCount++;
             }
         });
-    
-        // 顯示總答對題數
+
         const correctCountText = `你答對了 ${correctCount} 題`;
         const score = (correctCount / questions.length) * 100;
         const scoreText = `答對率為: ${score.toFixed(2)}%`;
-    
-        // 將總結訊息顯示在表格下方
+
         document.getElementById("summary").innerHTML = `
             <p>${correctCountText}</p>
             <p>${scoreText}</p>
         `;
-    
+
         saveResultsToFormspree();
     }
-    
-    
-    
-    
+
     function saveResultsToFormspree() {
         let allResults = {
             date: new Date().toLocaleString(),
             userInfo: userInfo,
             answers: answers,
-            openEndedAnswers: userInfo.openEndedAnswers  // 加入開放性問題的答案
+            openEndedAnswers: userInfo.openEndedAnswers
         };
-    
+
         fetch(apiEndpoint, {
             method: "POST",
             headers: {
@@ -435,3 +399,4 @@ function loadQuestion(index) {
         });
     }
 });
+
