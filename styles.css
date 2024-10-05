@@ -1,6 +1,6 @@
 /* 基本設置 */
 body {
-    font-family: 'Roboto', sans-serif; /* Google 的標準字體 */
+    font-family: 'Roboto', sans-serif;
     background-color: #f8f9fa;
     margin: 0;
     padding: 40px;
@@ -16,9 +16,9 @@ body {
     background-color: white;
     padding: 40px;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Material Design 的陰影 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     width: 85%;
-    max-width: 600px; /* 限制寬度以適應桌面設備 */
+    max-width: 600px;
     margin-bottom: 40px;
     text-align: center;
 }
@@ -47,14 +47,14 @@ body {
     border-radius: 4px;
     box-sizing: border-box;
     font-size: 16px;
-    background-color: #fafafa; /* 增加背景色以增強視覺效果 */
+    background-color: #fafafa;
 }
 
 /* 提交按鈕的設計 */
 #submit-info-button {
     padding: 14px 28px;
     font-size: 18px;
-    background-color: #1E88E5; /* Material Design 主題色 */
+    background-color: #1E88E5;
     color: white;
     border: none;
     border-radius: 4px;
@@ -62,7 +62,7 @@ body {
     transition: background-color 0.3s, box-shadow 0.3s;
     width: 100%;
     max-width: 400px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Material Design 陰影 */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     margin-top: 10px;
     margin: 0 auto;
     display: block;
@@ -183,7 +183,7 @@ video {
 }
 
 .button-options button.active {
-    background-color: #004085; /* 點擊後的狀態顏色 */
+    background-color: #004085;
 }
 
 .textarea-container {
@@ -301,4 +301,15 @@ textarea {
 
 .required {
     color: red;
+}
+
+.options label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.options input[type="radio"] {
+    margin-right: 10px;
 }
