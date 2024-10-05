@@ -262,6 +262,30 @@ textarea {
     border-right: 0; /* 移除右邊框 */
 }
 
+
+.button-options button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s;
+}
+
+.button-options button:hover {
+    background-color: #dcdcdc;
+}
+
+.button-options button:active {
+    background-color: #bbb;
+}
+
+
+
+
+
 .required {
     color: red;
 }
