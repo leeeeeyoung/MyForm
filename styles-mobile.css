@@ -13,15 +13,15 @@ body {
 
 /* 標題設計 */
 h1 {
-    font-size: 32px;
-    margin-bottom: 20px;
+    font-size: 28px; /* 移動端適合的標題大小 */
+    margin-bottom: 15px;
     text-align: center;
     color: #202124;
 }
 
 h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 22px;
+    margin-bottom: 15px;
     text-align: center;
     color: #202124;
 }
@@ -29,11 +29,11 @@ h2 {
 /* 基本資料表單設計 */
 #basic-info-form {
     background-color: #ffffff;
-    padding: 20px;
+    padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px;
+    max-width: 350px; /* 限制寬度以適應移動設備 */
     text-align: center;
     box-sizing: border-box;
 }
@@ -43,8 +43,8 @@ input[type="text"],
 input[type="email"],
 input[type="number"] {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 16px;
+    padding: 10px;
+    margin-bottom: 12px;
     border: 1px solid #ddd;
     border-radius: 4px;
     box-sizing: border-box;
@@ -60,7 +60,7 @@ input[type="number"]:focus {
 /* 按鈕容器設計 */
 button,
 .radio-option-button {
-    padding: 12px 24px;
+    padding: 10px 20px;
     font-size: 16px;
     background-color: #007bff;
     color: white;
@@ -69,8 +69,8 @@ button,
     cursor: pointer;
     transition: background-color 0.3s;
     width: 100%;
-    max-width: 300px;
-    margin-top: 20px;
+    max-width: 250px;
+    margin-top: 15px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -89,11 +89,11 @@ button:hover,
 /* 測驗容器設計 */
 #quiz-container {
     background-color: #ffffff;
-    padding: 20px;
+    padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px;
+    max-width: 350px;
     text-align: center;
 }
 
@@ -117,14 +117,6 @@ video {
     border-radius: 4px;
 }
 
-#result-container {
-    margin-top: 40px;
-    padding: 20px;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
 /* 問題區塊設計 */
 .question-block {
     margin-bottom: 20px;
@@ -140,7 +132,7 @@ video {
 
 /* 按鈕選項設計 */
 .radio-option-button {
-    padding: 10px;
+    padding: 8px;
     font-size: 16px;
     color: #ffffff;
     background-color: #007bff;
@@ -148,7 +140,7 @@ video {
     border-radius: 4px;
     cursor: pointer;
     width: 100%;
-    max-width: 300px;
+    max-width: 250px;
     text-align: center;
     transition: background-color 0.3s;
 }
@@ -158,9 +150,10 @@ video {
 }
 
 .radio-option-button.active {
-    background-color: #0056b3; /* 點擊後按鈕的狀態 */
+    background-color: #0056b3;
 }
 
+/* 文本框容器設計 */
 .textarea-container {
     margin-top: 10px;
 }
@@ -177,7 +170,7 @@ textarea {
 #result-container {
     margin: 20px auto;
     text-align: center;
-    width: 80%;
+    width: 90%;
     background-color: #f9f9f9;
     border-radius: 8px;
     padding: 20px;
@@ -193,7 +186,7 @@ textarea {
 #result-table th,
 #result-table td {
     border: 1px solid #ddd;
-    padding: 12px;
+    padding: 8px;
 }
 
 #result-table th {
@@ -216,7 +209,7 @@ textarea {
 }
 
 #summary {
-    font-size: 1.2em;
+    font-size: 1.1em;
     color: #333;
     margin-top: 20px;
 }
@@ -231,7 +224,7 @@ textarea {
 }
 
 .styled-table td {
-    padding: 10px;
+    padding: 8px;
     border: 1px solid #ddd;
     text-align: center;
 }
@@ -259,4 +252,15 @@ textarea {
 
 .required {
     color: red;
+}
+
+.options label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.options input[type="radio"] {
+    margin-right: 10px;
 }
