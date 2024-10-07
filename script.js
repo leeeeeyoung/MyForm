@@ -160,7 +160,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const questionElement = document.getElementById("question");
     const optionsContainer = document.getElementById("options-container");
     const videoElement = document.getElementById("video");
+    const agreeButton = document.getElementById("agree-button");
+    const surveyIntro = document.getElementById("survey-intro");
 
+    // 當按下同意按鈕後，隱藏問卷說明並顯示基本資料表單
+    agreeButton.addEventListener("click", () => {
+        surveyIntro.classList.add("hidden");
+        basicInfoForm.classList.remove("hidden");
+    });
+
+
+    
     submitInfoButton.onclick = () => {
         const email = document.getElementById("email").value;
         const gender = document.getElementById("gender").value;
