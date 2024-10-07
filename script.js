@@ -228,6 +228,11 @@ document.addEventListener("DOMContentLoaded", () => {
         videoElement.setAttribute("webkit-playsinline", "true");
         videoElement.controls = false; // 確保播放控制被禁用
 
+        // 禁止用戶使用鍵盤控制影片
+        videoElement.addEventListener("keydown", (event) => {
+            event.preventDefault();
+        });
+
         videoElement.onplaying = () => {
             if (!firstplay) {
                 startTime = new Date();
