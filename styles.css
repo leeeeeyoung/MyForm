@@ -173,7 +173,11 @@ video {
     border-radius: 8px;
     width: 100%;
     height: 400px;
+    pointer-events: none;  /* 禁止所有與影片的滑鼠互動，確保影片無法被點擊控制 */
+    user-select: none;     /* 禁止選擇，避免拖動影片 */
+    outline: none;         /* 移除任何焦點樣式 */
 }
+
 
 /* 輸入表單的 hover 效果 */
 #basic-info-form input:hover, #basic-info-form select:hover {
