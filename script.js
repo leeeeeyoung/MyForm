@@ -263,7 +263,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const correct = selectedIndex === questions[currentQuestionIndex].answer;
         answers.push({
-            question: `第 ${currentQuestionIndex + 1} 題`,
+            question: questions[currentQuestionIndex].video,
             selectedOption: questions[currentQuestionIndex].options[selectedIndex],
             correct: correct,
             timeTaken: timeTaken.toFixed(2)
