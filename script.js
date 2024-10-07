@@ -133,6 +133,13 @@ const questions = [
     },
 ];
 
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
 let currentQuestionIndex = 0;
 let answers = [];
 let startTime;
@@ -182,6 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.removeItem("quizResults");
         answers = [];
         currentQuestionIndex = 0;
+        shuffle(questions); // 打亂問題順序
         mainMenu.classList.add("hidden");
         quizContainer.classList.remove("hidden");
         loadQuestion(currentQuestionIndex);
@@ -399,4 +407,3 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
-
