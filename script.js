@@ -163,7 +163,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const agreeButton = document.getElementById("agree-button");
     const surveyIntro = document.getElementById("survey-intro");
 
-
     basicInfoForm.classList.add("hidden");
     
     // 當按下同意按鈕後，隱藏問卷說明並顯示基本資料表單
@@ -172,8 +171,6 @@ document.addEventListener("DOMContentLoaded", () => {
         basicInfoForm.classList.remove("hidden");
     });
 
-
-    
     submitInfoButton.onclick = () => {
         const email = document.getElementById("email").value;
         const gender = document.getElementById("gender").value;
@@ -222,10 +219,14 @@ document.addEventListener("DOMContentLoaded", () => {
         optionsContainer.classList.add("hidden");
 
         videoElement.src = currentQuestion.video;
+        // 移除播放控制
+        videoElement.removeAttribute("controls"); // 確保沒有顯示控制列
+        // 自動播放影片並禁止手動控制
         videoElement.setAttribute("autoplay", "true");
         videoElement.setAttribute("muted", "true");
         videoElement.setAttribute("playsinline", "true");
         videoElement.setAttribute("webkit-playsinline", "true");
+        videoElement.controls = false; // 確保播放控制被禁用
 
         videoElement.onplaying = () => {
             if (!firstplay) {
@@ -236,13 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (videoElement.currentTime >= 3) {
                         clearInterval(intervalId);
                         if (!hasOptionsShown) {
-                            currentQuestion.options.forEach((option, i) => {
-                                const button = document.createElement("button");
-                                button.textContent = option;
-                                button.onclick = () => selectOption(i);
-                                optionsContainer.appendChild(button);
-                            });
-                            optionsContainer.classList.remove("hidden");
+                            displayOptions(currentQuestion);
                             hasOptionsShown = true;
                         }
                     }
@@ -254,13 +249,7 @@ document.addEventListener("DOMContentLoaded", () => {
             videoEndTime = new Date();
 
             if (!hasOptionsShown) {
-                currentQuestion.options.forEach((option, i) => {
-                    const button = document.createElement("button");
-                    button.textContent = option;
-                    button.onclick = () => selectOption(i);
-                    optionsContainer.appendChild(button);
-                });
-                optionsContainer.classList.remove("hidden");
+                displayOptions(currentQuestion);
                 hasOptionsShown = true;
             }
         };
@@ -268,6 +257,16 @@ document.addEventListener("DOMContentLoaded", () => {
         videoElement.play().catch((error) => {
             console.error("影片無法自動播放: ", error);
         });
+    }
+
+    function displayOptions(currentQuestion) {
+        currentQuestion.options.forEach((option, i) => {
+            const button = document.createElement("button");
+            button.textContent = option;
+            button.onclick = () => selectOption(i);
+            optionsContainer.appendChild(button);
+        });
+        optionsContainer.classList.remove("hidden");
     }
 
     function selectOption(selectedIndex) {
