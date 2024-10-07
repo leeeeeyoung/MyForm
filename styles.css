@@ -14,13 +14,14 @@ body {
 
 /* 問卷介紹區塊設計 */
 #survey-intro {
-    background: white;
-    width: 90%;
-    margin: 30px auto;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 85%;
+    max-width: 600px;
+    margin-bottom: 40px;
+    text-align: left;
 }
 
 #survey-intro h1 {
