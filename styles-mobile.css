@@ -11,6 +11,47 @@ body {
     color: #212121;
 }
 
+
+/* 問卷介紹區塊設計 */
+#survey-intro {
+    background: white;
+    width: 90%;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#survey-intro h1 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+#survey-intro p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+#survey-intro button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+#survey-intro button:hover {
+    background-color: #45a049;
+}
+
+
 /* 基本資料輸入區使用 Material Design 風格 */
 #basic-info-form {
     background-color: white;
