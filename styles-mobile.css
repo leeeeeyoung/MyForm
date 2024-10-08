@@ -137,7 +137,7 @@ button {
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin: 30px;
+    margin: 10px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -159,6 +159,7 @@ button:hover {
 /* 按鈕選項區域設計 */
 #options-container {
     display: flex;
+    flex-direction: column; /* 改為垂直排列 */
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
