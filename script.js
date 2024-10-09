@@ -294,11 +294,7 @@ document.addEventListener("DOMContentLoaded", () => {
         demoFeedback.classList.remove("hidden");
     }
 
-    demoNextButton.addEventListener("click", () => {
-        demoContainer.classList.add("hidden");
-        mainMenu.classList.remove("hidden");
-    });
-    
+
 
     demoNextButton.onclick = () => {
         localStorage.removeItem("quizResults");
