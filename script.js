@@ -174,8 +174,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const videoElement = document.getElementById("video");
     const agreeButton = document.getElementById("agree-button");
     const surveyIntro = document.getElementById("survey-intro");
-    const demoVideoElement = document.getElementById("video");
-    const demoOptionsContainer = document.getElementById("options-container");
+    const demoVideoElement = document.getElementById("demo-video");
+    const demoOptionsContainer = document.getElementById("demo-options-container");
     const demoFeedback = document.getElementById("demo-feedback");
     
     // 當按下同意按鈕後，隱藏問卷說明並顯示基本資料表單
