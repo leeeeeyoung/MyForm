@@ -1,5 +1,11 @@
 const questions = [
     {
+        question: "0.如果您想左轉，並且看到顯示的交通號誌，您會...",
+        options: ["直接左轉", "讓行，等待間隙", "停下"],
+        answer: 2,
+        video: "video0.mp4"
+    },
+    {
         question: "1.如果您想左轉，並且看到顯示的交通號誌，您會...",
         options: ["直接左轉", "讓行，等待間隙", "停下"],
         answer: 0,
@@ -155,8 +161,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const basicInfoForm = document.getElementById("basic-info-form");
     const mainMenu = document.getElementById("main-menu");
     const quizContainer = document.getElementById("quiz-container");
+    const demoContainer = document.getElementById("demo-container");
     const submitInfoButton = document.getElementById("submit-info-button");
     const startButton = document.getElementById("start-button");
+    const demoNextButton = document.getElementById("demo-next-button");
     const questionElement = document.getElementById("question");
     const optionsContainer = document.getElementById("options-container");
     const videoElement = document.getElementById("video");
