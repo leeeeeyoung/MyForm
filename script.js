@@ -203,12 +203,22 @@ document.addEventListener("DOMContentLoaded", () => {
             form.action = apiEndpoint;
 
             basicInfoForm.classList.add("hidden");
-            demoContainer.classList.remove("hidden");
+            mainMenu.classList.remove("hidden");
         } else {
             alert("請填寫所有資料！");
         }
     };
 
+
+    startButton.onclick = () => {
+        localStorage.removeItem("quizResults");
+        answers = [];
+        currentQuestionIndex = 0;
+        shuffle(questions); // 打亂問題順序並更新題號
+        mainMenu.classList.add("hidden");
+        demoContainer.classList.remove("hidden");
+        loadQuestion(currentQuestionIndex);
+    };
 
     function loadDemoQuestion() {
         const currentQuestion = demo[0];
@@ -293,15 +303,6 @@ document.addEventListener("DOMContentLoaded", () => {
         mainMenu.classList.remove("hidden");
     });
     
-    startButton.onclick = () => {
-        localStorage.removeItem("quizResults");
-        answers = [];
-        currentQuestionIndex = 0;
-        shuffle(questions); // 打亂問題順序並更新題號
-        mainMenu.classList.add("hidden");
-        quizContainer.classList.remove("hidden");
-        loadQuestion(currentQuestionIndex);
-    };
 
     function loadQuestion(index) {
         const currentQuestion = questions[index];
