@@ -215,9 +215,9 @@ document.addEventListener("DOMContentLoaded", () => {
         let hasOptionsShown = false;
         let firstplay = false;
 
-        questionElement.textContent = currentQuestion.question;
-        optionsContainer.innerHTML = "";
-        optionsContainer.classList.add("hidden");
+        demoOptionsContainer.innerHTML = "";
+        demoOptionsContainer.classList.add("hidden");
+        demoFeedback.classList.add("hidden");
 
         demoVideoElement.src = currentQuestion.video;
         // 移除播放控制
@@ -283,7 +283,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (correct) {
             demoFeedback.textContent = `正確答案！您回答正確！反應時間：${timeTaken} 秒`;
         } else {
-            demoFeedback.textContent = `錯誤答案，正確答案為停下。反應時間：${timeTaken} 秒`;
+            demoFeedback.textContent = `錯誤答案，請再檢視示範影片。反應時間：${timeTaken} 秒`;
         }
         demoFeedback.classList.remove("hidden");
     }
@@ -292,7 +292,7 @@ document.addEventListener("DOMContentLoaded", () => {
         demoContainer.classList.add("hidden");
         mainMenu.classList.remove("hidden");
     });
-
+    
     startButton.onclick = () => {
         localStorage.removeItem("quizResults");
         answers = [];
