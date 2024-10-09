@@ -127,56 +127,6 @@ body {
     margin-top: 20px;
 }
 
-
-
-/* DEMO 容器樣式 */
-#demo-container {
-    background-color: white;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    max-width: 900px;
-    width: 100%;
-    text-align: center;
-    margin-top: 20px;
-}
-
-/* DEMO 選項按鈕的設計 */
-#demo-container button {
-    padding: 12px 28px;
-    font-size: 20px;
-    border-radius: 6px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin: 10px;
-}
-
-#demo-container button:hover {
-    background-color: #218838;
-}
-
-/* DEMO 反饋區域樣式 */
-#demo-feedback {
-    margin-top: 20px;
-    font-size: 18px;
-    color: #333;
-    text-align: center;
-}
-
-/* DEMO 選項按鈕區域設計 */
-#options-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-
-
-
 /* 一般按鈕的設計 */
 button {
     padding: 16px 36px;
