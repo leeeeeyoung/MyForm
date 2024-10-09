@@ -209,6 +209,90 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
+
+    function loadDemoQuestion() {
+        const currentQuestion = demo[0];
+        let hasOptionsShown = false;
+        let firstplay = false;
+
+        demoOptionsContainer.innerHTML = "";
+        demoOptionsContainer.classList.add("hidden");
+        demoFeedback.classList.add("hidden");
+
+        demoVideoElement.src = currentQuestion.video;
+        // 移除播放控制
+        demoVideoElement.removeAttribute("controls"); // 確保沒有顯示控制列
+        // 自動播放影片並禁止手動控制
+        demoVideoElement.setAttribute("autoplay", "true");
+        demoVideoElement.setAttribute("muted", "true");
+        demoVideoElement.setAttribute("playsinline", "true");
+        demoVideoElement.setAttribute("webkit-playsinline", "true");
+        demoVideoElement.controls = false; // 確保播放控制被禁用
+
+        // 禁止用戶使用鍵盤控制影片
+        demoVideoElement.addEventListener("keydown", (event) => {
+            event.preventDefault();
+        });
+
+        demoVideoElement.onplaying = () => {
+            if (!firstplay) {
+                startTime = new Date();
+                firstplay = true;
+
+                const intervalId = setInterval(() => {
+                    if (demoVideoElement.currentTime >= 3) {
+                        clearInterval(intervalId);
+                        if (!hasOptionsShown) {
+                            displayDemoOptions(currentQuestion);
+                            hasOptionsShown = true;
+                        }
+                    }
+                }, 100);
+            }
+        };
+
+        demoVideoElement.onended = () => {
+            videoEndTime = new Date();
+
+            if (!hasOptionsShown) {
+                displayDemoOptions(currentQuestion);
+                hasOptionsShown = true;
+            }
+        };
+
+        demoVideoElement.play().catch((error) => {
+            console.error("影片無法自動播放: ", error);
+        });
+    }
+
+    function displayDemoOptions(currentQuestion) {
+        currentQuestion.options.forEach((option, i) => {
+            const button = document.createElement("button");
+            button.textContent = option;
+            button.onclick = () => selectDemoOption(i);
+            demoOptionsContainer.appendChild(button);
+        });
+        demoOptionsContainer.classList.remove("hidden");
+    }
+
+    function selectDemoOption(selectedIndex) {
+        const endTime = new Date();
+        const timeTaken = ((endTime - startTime) / 1000 - 3.0).toFixed(2);
+
+        const correct = selectedIndex === demo[0].answer;
+        if (correct) {
+            demoFeedback.textContent = `正確答案！您回答正確！反應時間：${timeTaken} 秒`;
+        } else {
+            demoFeedback.textContent = `錯誤答案，正確答案為停下。反應時間：${timeTaken} 秒`;
+        }
+        demoFeedback.classList.remove("hidden");
+    }
+
+    demoNextButton.addEventListener("click", () => {
+        demoContainer.classList.add("hidden");
+        mainMenu.classList.remove("hidden");
+    });
+
     startButton.onclick = () => {
         localStorage.removeItem("quizResults");
         answers = [];
