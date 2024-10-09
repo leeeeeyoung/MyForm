@@ -1,11 +1,5 @@
 const questions = [
     {
-        question: "0.如果您想左轉，並且看到顯示的交通號誌，您會...",
-        options: ["直接左轉", "讓行，等待間隙", "停下"],
-        answer: 2,
-        video: "video0.mp4"
-    },
-    {
         question: "1.如果您想左轉，並且看到顯示的交通號誌，您會...",
         options: ["直接左轉", "讓行，等待間隙", "停下"],
         answer: 0,
@@ -138,6 +132,16 @@ const questions = [
         video: "video22.mp4"
     }
 ];
+
+const demo = [
+    {
+        question: "0.如果您想左轉，並且看到顯示的交通號誌，您會...",
+        options: ["直接左轉", "讓行，等待間隙", "停下"],
+        answer: 2,
+        video: "video0.mp4"
+    },
+];
+
 
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
