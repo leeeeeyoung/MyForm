@@ -209,16 +209,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-
-    startButton.onclick = () => {
-        localStorage.removeItem("quizResults");
-        answers = [];
-        currentQuestionIndex = 0;
-        shuffle(questions); // 打亂問題順序並更新題號
+    startButton.addEventListener("click", () => {
         mainMenu.classList.add("hidden");
         demoContainer.classList.remove("hidden");
-        loadQuestion(currentQuestionIndex);
-    };
+    });
+    
+
 
     function loadDemoQuestion() {
         const currentQuestion = demo[0];
@@ -304,6 +300,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     
 
+    demoNextButton.onclick = () => {
+        localStorage.removeItem("quizResults");
+        answers = [];
+        currentQuestionIndex = 0;
+        shuffle(questions); // 打亂問題順序並更新題號
+        demoContainer.classList.add("hidden");
+        quizContainer.classList.remove("hidden");
+        loadQuestion(currentQuestionIndex);
+    };
+    
     function loadQuestion(index) {
         const currentQuestion = questions[index];
         let hasOptionsShown = false;
