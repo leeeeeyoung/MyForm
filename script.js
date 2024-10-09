@@ -174,8 +174,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const videoElement = document.getElementById("video");
     const agreeButton = document.getElementById("agree-button");
     const surveyIntro = document.getElementById("survey-intro");
-
-    basicInfoForm.classList.add("hidden");
     
     // 當按下同意按鈕後，隱藏問卷說明並顯示基本資料表單
     agreeButton.addEventListener("click", () => {
