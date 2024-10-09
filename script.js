@@ -221,7 +221,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function loadDemoQuestion() {
         const currentQuestion = demo[0];
-        let hasOptionsShown = false;
         let firstplay = false;
 
         demoOptionsContainer.innerHTML = "";
@@ -251,21 +250,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 const intervalId = setInterval(() => {
                     if (demoVideoElement.currentTime >= 3) {
                         clearInterval(intervalId);
-                        if (!hasOptionsShown) {
-                            displayDemoOptions(currentQuestion);
-                            hasOptionsShown = true;
-                        }
+                        displayDemoOptions(currentQuestion);
                     }
                 }, 100);
-            }
-        };
-
-        demoVideoElement.onended = () => {
-            videoEndTime = new Date();
-
-            if (!hasOptionsShown) {
-                displayDemoOptions(currentQuestion);
-                hasOptionsShown = true;
             }
         };
 
@@ -295,8 +282,8 @@ document.addEventListener("DOMContentLoaded", () => {
             demoFeedback.textContent = `錯誤答案，請再檢視示範影片。反應時間：${timeTaken} 秒`;
         }
         demoFeedback.classList.remove("hidden");
+        demoOptionsContainer.classList.add("hidden");
     }
-
 
 
     demoNextButton.onclick = () => {
