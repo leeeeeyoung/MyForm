@@ -203,7 +203,7 @@ document.addEventListener("DOMContentLoaded", () => {
             form.action = apiEndpoint;
 
             basicInfoForm.classList.add("hidden");
-            mainMenu.classList.remove("hidden");
+            demoContainer.classList.remove("hidden");
         } else {
             alert("請填寫所有資料！");
         }
@@ -215,9 +215,9 @@ document.addEventListener("DOMContentLoaded", () => {
         let hasOptionsShown = false;
         let firstplay = false;
 
-        demoOptionsContainer.innerHTML = "";
-        demoOptionsContainer.classList.add("hidden");
-        demoFeedback.classList.add("hidden");
+        questionElement.textContent = currentQuestion.question;
+        optionsContainer.innerHTML = "";
+        optionsContainer.classList.add("hidden");
 
         demoVideoElement.src = currentQuestion.video;
         // 移除播放控制
