@@ -133,6 +133,13 @@ const questions = [
     }
 ];
 
+const demoQuestion = {
+    question: "示範題目：如果您想左轉，並且看到顯示的交通號誌，您會...",
+    options: ["直接左轉", "讓行，等待間隙", "停下"],
+    answer: 2,  // 假設正確答案為"讓行，等待間隙"
+    video: "video0.mp4"
+};
+
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -144,6 +151,8 @@ function shuffle(array) {
     });
 }
 
+
+let isDemo = true; // 加入示範模式的標記
 let currentQuestionIndex = 0;
 let answers = [];
 let startTime;
@@ -199,36 +208,41 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
+    // 2. 在startButton的click事件中，改為進入示範題目
     startButton.onclick = () => {
-        localStorage.removeItem("quizResults");
-        answers = [];
-        currentQuestionIndex = 0;
-        shuffle(questions); // 打亂問題順序並更新題號
+        isDemo = true;
         mainMenu.classList.add("hidden");
         quizContainer.classList.remove("hidden");
-        loadQuestion(currentQuestionIndex);
+        loadDemoQuestion();
     };
 
+    // 3. 定義一個新的函數來載入示範題目
+    function loadDemoQuestion() {
+        loadQuestionContent(demoQuestion, true);
+    }
+
+    // 4. 修改loadQuestion函數以支援示範題目
     function loadQuestion(index) {
         const currentQuestion = questions[index];
+        loadQuestionContent(currentQuestion, false);
+    }
+
+    function loadQuestionContent(questionData, isDemoQuestion) {
         let hasOptionsShown = false;
         let firstplay = false;
 
-        questionElement.textContent = currentQuestion.question;
+        questionElement.textContent = questionData.question;
         optionsContainer.innerHTML = "";
         optionsContainer.classList.add("hidden");
 
-        videoElement.src = currentQuestion.video;
-        // 移除播放控制
-        videoElement.removeAttribute("controls"); // 確保沒有顯示控制列
-        // 自動播放影片並禁止手動控制
+        videoElement.src = questionData.video;
+        videoElement.removeAttribute("controls");
         videoElement.setAttribute("autoplay", "true");
         videoElement.setAttribute("muted", "true");
         videoElement.setAttribute("playsinline", "true");
         videoElement.setAttribute("webkit-playsinline", "true");
-        videoElement.controls = false; // 確保播放控制被禁用
+        videoElement.controls = false;
 
-        // 禁止用戶使用鍵盤控制影片
         videoElement.addEventListener("keydown", (event) => {
             event.preventDefault();
         });
@@ -242,7 +256,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     if (videoElement.currentTime >= 3) {
                         clearInterval(intervalId);
                         if (!hasOptionsShown) {
-                            displayOptions(currentQuestion);
+                            displayOptions(questionData, isDemoQuestion);
                             hasOptionsShown = true;
                         }
                     }
@@ -251,10 +265,8 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         videoElement.onended = () => {
-            videoEndTime = new Date();
-
             if (!hasOptionsShown) {
-                displayOptions(currentQuestion);
+                displayOptions(questionData, isDemoQuestion);
                 hasOptionsShown = true;
             }
         };
@@ -264,34 +276,62 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    function displayOptions(currentQuestion) {
+    function displayOptions(currentQuestion, isDemoQuestion) {
         currentQuestion.options.forEach((option, i) => {
             const button = document.createElement("button");
             button.textContent = option;
-            button.onclick = () => selectOption(i);
+            button.onclick = () => selectOption(i, isDemoQuestion);
             optionsContainer.appendChild(button);
         });
         optionsContainer.classList.remove("hidden");
     }
 
-    function selectOption(selectedIndex) {
+    function selectOption(selectedIndex, isDemoQuestion) {
         const endTime = new Date();
         const timeTaken = (endTime - startTime) / 1000 - 3.0;
 
-        const correct = selectedIndex === questions[currentQuestionIndex].answer;
-        answers.push({
-            question: questions[currentQuestionIndex].video,
-            selectedOption: questions[currentQuestionIndex].options[selectedIndex],
-            correct: correct,
-            timeTaken: timeTaken.toFixed(2)
-        });
+        const correct = selectedIndex === (isDemoQuestion ? demoQuestion.answer : questions[currentQuestionIndex].answer);
 
-        currentQuestionIndex++;
-        if (currentQuestionIndex < questions.length) {
-            loadQuestion(currentQuestionIndex);
+        if (isDemoQuestion) {
+            showDemoResult(correct, timeTaken);
         } else {
-            showOpenEndedQuestions();
+            answers.push({
+                question: questions[currentQuestionIndex].video,
+                selectedOption: questions[currentQuestionIndex].options[selectedIndex],
+                correct: correct,
+                timeTaken: timeTaken.toFixed(2)
+            });
+
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                loadQuestion(currentQuestionIndex);
+            } else {
+                showOpenEndedQuestions();
+            }
         }
+    }
+
+    function showDemoResult(correct, timeTaken) {
+        quizContainer.classList.add("hidden");
+        const demoResultContainer = document.createElement("div");
+        demoResultContainer.id = "demo-result-container";
+        demoResultContainer.innerHTML = `
+            <h2>示範結果</h2>
+            <p>${correct ? "答對了！" : "答錯了！"}</p>
+            <p>您的反應時間是: ${timeTaken.toFixed(2)} 秒</p>
+            <button id="start-real-quiz-button">開始正式測驗</button>
+        `;
+        document.body.appendChild(demoResultContainer);
+
+        document.getElementById("start-real-quiz-button").onclick = () => {
+            document.body.removeChild(demoResultContainer);
+            isDemo = false;
+            answers = [];
+            currentQuestionIndex = 0;
+            shuffle(questions); // 打亂問題順序並更新題號
+            quizContainer.classList.remove("hidden");
+            loadQuestion(currentQuestionIndex);
+        };
     }
 
     function showOpenEndedQuestions() {
