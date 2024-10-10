@@ -145,6 +145,64 @@ button:hover {
     background-color: #0056b3;
 }
 
+
+
+#demo-result-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+#demo-result-container h2 {
+    color: #4CAF50;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#demo-result-container p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+#demo-result-container p.correct {
+    color: #28a745;
+}
+
+#demo-result-container p.incorrect {
+    color: #dc3545;
+}
+
+#demo-result-container strong {
+    color: #333;
+}
+
+#start-real-quiz-button {
+    margin-top: 30px;
+    padding: 12px 24px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#start-real-quiz-button:hover {
+    background-color: #0056b3;
+}
+
+#start-real-quiz-button:focus {
+    outline: none;
+}
+
+
+
 /* 測驗區域的樣式 */
 #quiz-container {
     background-color: white;
