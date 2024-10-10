@@ -316,7 +316,7 @@ document.addEventListener("DOMContentLoaded", () => {
         demoResultContainer.id = "demo-result-container";
         demoResultContainer.innerHTML = `
             <h2>示範結果</h2>
-            <p>${correct ? "答對了！" : "答錯了！"}</p>
+            <p>${correct ? "答對了！" : "答錯了！正確答案是：${demoQuestion.options[demoQuestion.answer]}"}</p>
             <p>您的反應時間是: ${timeTaken.toFixed(2)} 秒</p>
             <button id="start-real-quiz-button">開始正式測驗</button>
         `;
@@ -332,6 +332,7 @@ document.addEventListener("DOMContentLoaded", () => {
             loadQuestion(currentQuestionIndex);
         };
     }
+
 
     function showOpenEndedQuestions() {
         document.getElementById("quiz-container").classList.add("hidden");
