@@ -207,7 +207,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // 2. 在startButton的click事件中，改為進入示範題目
+
     startButton.onclick = () => {
         isDemo = true;
         mainMenu.classList.add("hidden");
@@ -215,12 +215,12 @@ document.addEventListener("DOMContentLoaded", () => {
         loadDemoQuestion();
     };
 
-    // 3. 定義一個新的函數來載入示範題目
+
     function loadDemoQuestion() {
         loadQuestionContent(demoQuestion, true);
     }
 
-    // 4. 修改loadQuestion函數以支援示範題目
+
     function loadQuestion(index) {
         const currentQuestion = questions[index];
         loadQuestionContent(currentQuestion, false);
@@ -316,7 +316,7 @@ document.addEventListener("DOMContentLoaded", () => {
         demoResultContainer.id = "demo-result-container";
         demoResultContainer.innerHTML = `
             <h2>示範結果</h2>
-            <p>${correct ? "答對了！" : "答錯了！正確答案是：${demoQuestion.options[demoQuestion.answer]}"}</p>
+            <p>${correct ? "答對了！" : "答錯了！正確答案是：停下"}</p>
             <p>您的反應時間是: ${timeTaken.toFixed(2)} 秒</p>
             <button id="start-real-quiz-button">開始正式測驗</button>
         `;
