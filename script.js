@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
             userInfo.experience = experience;
             userInfo.commute = commute;
 
-            apiEndpoint = "https://formspree.io/f/mblrbdal";
+            apiEndpoint = "https://formspree.io/f/mjkbzwwa";
 
             const form = document.getElementById("basic-info-form");
             form.action = apiEndpoint;
