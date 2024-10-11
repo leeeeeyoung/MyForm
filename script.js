@@ -6,22 +6,10 @@ const questions = [
         video: "video1.mp4"
     },
     {
-        question: "2.如果您想左轉，並且看到顯示的交通號誌，您會...",
-        options: ["直接左轉", "讓行，等待間隙", "停下"],
-        answer: 0,
-        video: "video2.mp4"
-    },
-    {
         question: "3.如果您想左轉，並且看到顯示的交通號誌，您會...",
         options: ["直接左轉", "讓行，等待間隙", "停下"],
         answer: 0,
         video: "video3.mp4"
-    },
-    {
-        question: "4.如果您想左轉，並且看到顯示的交通號誌，您會...",
-        options: ["直接左轉", "讓行，等待間隙", "停下"],
-        answer: 0,
-        video: "video4.mp4"
     },
     {
         question: "5.如果您想左轉，並且看到顯示的交通號誌，您會...",
@@ -42,22 +30,10 @@ const questions = [
         video: "video9.mp4"
     },
     {
-        question: "10.如果您想左轉，並且看到顯示的交通號誌，您會...",
-        options: ["直接左轉", "讓行，等待間隙", "停下"],
-        answer: 1,
-        video: "video10.mp4"
-    },
-    {
         question: "11.如果您想左轉，並且看到顯示的交通號誌，您會...",
         options: ["直接左轉", "讓行，等待間隙", "停下"],
         answer: 1,
         video: "video11.mp4"
-    },
-    {
-        question: "12.如果您想左轉，並且看到顯示的交通號誌，您會...",
-        options: ["直接左轉", "讓行，等待間隙", "停下"],
-        answer: 1,
-        video: "video12.mp4"
     },
     {
         question: "13.如果您想左轉，並且看到顯示的交通號誌，您會...",
