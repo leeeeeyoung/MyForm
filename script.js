@@ -223,11 +223,11 @@ document.addEventListener("DOMContentLoaded", () => {
     function loadQuestionContent(questionData, isDemoQuestion) {
         let hasOptionsShown = false;
         let firstplay = false;
-
+    
         questionElement.textContent = questionData.question;
         optionsContainer.innerHTML = "";
         optionsContainer.classList.add("hidden");
-
+    
         videoElement.src = questionData.video;
         videoElement.removeAttribute("controls");
         videoElement.setAttribute("autoplay", "true");
@@ -235,16 +235,16 @@ document.addEventListener("DOMContentLoaded", () => {
         videoElement.setAttribute("playsinline", "true");
         videoElement.setAttribute("webkit-playsinline", "true");
         videoElement.controls = false;
-
+    
         videoElement.addEventListener("keydown", (event) => {
             event.preventDefault();
         });
-
+    
         videoElement.onplaying = () => {
             if (!firstplay) {
                 startTime = new Date();
                 firstplay = true;
-
+    
                 const intervalId = setInterval(() => {
                     if (videoElement.currentTime >= 3) {
                         clearInterval(intervalId);
@@ -256,29 +256,40 @@ document.addEventListener("DOMContentLoaded", () => {
                 }, 100);
             }
         };
-
+    
         videoElement.onended = () => {
             if (!hasOptionsShown) {
                 displayOptions(questionData, isDemoQuestion);
                 hasOptionsShown = true;
             }
+            // 影片第一次播放完畢後，回到第3秒並進行循環播放
+            videoElement.currentTime = 3;
+            videoElement.loop = true;
+            videoElement.play().catch((error) => {
+                console.error("影片無法自動播放: ", error);
+            });
         };
-
+    
         videoElement.play().catch((error) => {
             console.error("影片無法自動播放: ", error);
         });
     }
-
+    
     function displayOptions(currentQuestion, isDemoQuestion) {
         currentQuestion.options.forEach((option, i) => {
             const button = document.createElement("button");
             button.textContent = option;
-            button.onclick = () => selectOption(i, isDemoQuestion);
+            button.onclick = () => {
+                // 當受訪者按下選項後，停止影片播放並取消循環
+                videoElement.pause();
+                videoElement.loop = false;
+                selectOption(i, isDemoQuestion);
+            };
             optionsContainer.appendChild(button);
         });
         optionsContainer.classList.remove("hidden");
     }
-
+    
     function selectOption(selectedIndex, isDemoQuestion) {
         const endTime = new Date();
         const timeTaken = (endTime - startTime) / 1000 - 3.0;
