@@ -52,9 +52,10 @@
                 <option value="weekly">每週至少1次</option>
                 <option value="monthly">每月至少1次</option>
                 <option value="rarely">偶爾</option>
+                <option value="no driving license">無汽車駕照</option>
             </select>
             <br>
-            <label for="experience">駕駛經驗年數:</label>
+            <label for="experience">駕駛汽車經驗年數:</label>
             <input type="number" id="experience" name="experience" min="0" required>
             <br>
             <label for="commute">主要通勤方式:</label>
@@ -62,8 +63,8 @@
                 <option value="">選擇通勤方式</option>
                 <option value="car">汽車</option>
                 <option value="motorbike">機車</option>
-                <option value="bicycle">腳踏車</option>
-                <option value="walking">步行</option>
+                <option value="public-transport">大眾運輸</option>
+                <option value="other">其他</option>
             </select>
             <br>
             <button type="button" id="submit-info-button">提交資料</button>
@@ -78,9 +79,10 @@
         <div class="rules" style="text-align: left;">
             <h2>測驗規則</h2>
             <ol>
-                <li>總共12題，每題均為判斷左轉行為決策的單選擇題</li>
+                <li>總共21題，每題均為判斷號誌所傳達指令(判斷號誌是保護左轉、非保護左轉、不能左轉)單選擇題</li>
+                <li>每題均為不同情境與不同號誌組合，其中包含現有號誌(不另外解釋)以及引入獨立左轉號誌，說明如下表</li>
                 <li>進入題目頁面後，駕駛模擬影片會自動播放</li>
-                <li>影片播放前3秒固定為紅燈時相，紅燈結束後依顯示號誌點擊選項按鈕作答</li>
+                <li>影片播放前3秒號誌為全黑，3秒後依顯示號誌點擊選項按鈕作答</li>
                 <li><strong style="color: red;">請根據號誌所傳達的指令做選擇</strong></li>
             </ol>
 
@@ -90,28 +92,28 @@
                     <td>&nbsp;</td><td>主要號誌</td><td>圖</td><td>左轉專用號誌</td><td>圖</td><td>號誌含意</td>
                 </tr>
                 <tr>
-                    <td>(a)</td><td>直行右轉號誌</td><td><img src="橫4_直行右轉.jpg" alt="主要號誌 (a)" style="width: 40px;"></td><td>黃色箭頭長亮</td><td><img src="直_黃箭.jpg" alt="左轉號誌 (a)" style="width: 20px;"></td><td>非保護左轉(需讓行)</td>
+                    <td>(a)</td><td>直行右轉號誌</td><td><img src="橫4_直行右轉.jpg" alt="主要號誌 (a)" style="width: 50px;"></td><td>黃色箭頭長亮</td><td><img src="直_黃箭.jpg" alt="左轉號誌 (a)" style="width: 20px;"></td><td>非保護左轉(需讓行)</td>
                 </tr>
                 <tr>
-                    <td>(b)</td><td>直行右轉號誌</td><td><img src="橫4_直行右轉.jpg" alt="主要號誌 (b)" style="width: 40px;"></td><td>黃色箭頭閃爍</td><td><img src="直_黃箭_閃.gif" alt="左轉號誌 (b)" style="width: 20px;"></td><td>非保護左轉(需讓行)</td>
+                    <td>(b)</td><td>直行右轉號誌</td><td><img src="橫4_直行右轉.jpg" alt="主要號誌 (b)" style="width: 50px;"></td><td>黃色箭頭閃爍</td><td><img src="直_黃箭_閃.gif" alt="左轉號誌 (b)" style="width: 20px;"></td><td>非保護左轉(需讓行)</td>
                 </tr>
                 <tr>
-                    <td>(c)</td><td>直行右轉號誌</td><td><img src="橫4_直行右轉.jpg" alt="主要號誌 (c)" style="width: 40px;"></td><td>綠色箭頭閃爍</td><td><img src="直_綠箭_閃.gif" alt="左轉號誌 (c)" style="width: 20px;"></td><td>非保護左轉(需讓行)</td>
+                    <td>(c)</td><td>直行右轉號誌</td><td><img src="橫4_直行右轉.jpg" alt="主要號誌 (c)" style="width: 50px;"></td><td>綠色箭頭閃爍</td><td><img src="直_綠箭_閃.gif" alt="左轉號誌 (c)" style="width: 20px;"></td><td>非保護左轉(需讓行)</td>
                 </tr>
                 <tr>
-                    <td>(d)</td><td>直行右轉號誌</td><td><img src="橫4_直行右轉.jpg" alt="主要號誌 (d)" style="width: 40px;"></td><td>綠色圓型閃爍</td><td><img src="直_綠圓_閃.gif" alt="左轉號誌 (d)" style="width: 20px;"></td><td>非保護左轉(需讓行)</td>
+                    <td>(d)</td><td>直行右轉號誌</td><td><img src="橫4_直行右轉.jpg" alt="主要號誌 (d)" style="width: 50px;"></td><td>綠色圓型閃爍</td><td><img src="直_綠圓_閃.gif" alt="左轉號誌 (d)" style="width: 20px;"></td><td>非保護左轉(需讓行)</td>
                 </tr>
                 <tr>
-                    <td>(e)</td><td>直行右轉號誌</td><td><img src="橫4_直行右轉.jpg" alt="主要號誌 (e)" style="width: 40px;"></td><td>綠色箭頭長亮</td><td><img src="直_綠箭.jpg" alt="左轉號誌 (e)" style="width: 20px;"></td><td>保護左轉</td>
+                    <td>(e)</td><td>直行右轉號誌</td><td><img src="橫4_直行右轉.jpg" alt="主要號誌 (e)" style="width: 50px;"></td><td>綠色箭頭長亮</td><td><img src="直_綠箭.jpg" alt="左轉號誌 (e)" style="width: 20px;"></td><td>保護左轉</td>
                 </tr>
                 <tr>
-                    <td>(f)</td><td>直行右轉號誌</td><td><img src="橫4_直行右轉.jpg" alt="主要號誌 (f)" style="width: 40px;"></td><td>綠色圓型長亮</td><td><img src="直_綠圓.png" alt="左轉號誌 (f)" style="width: 20px;"></td><td>保護左轉</td>
+                    <td>(f)</td><td>直行右轉號誌</td><td><img src="橫4_直行右轉.jpg" alt="主要號誌 (f)" style="width: 50px;"></td><td>綠色圓型長亮</td><td><img src="直_綠圓.png" alt="左轉號誌 (f)" style="width: 20px;"></td><td>保護左轉</td>
                 </tr>
                 <tr>
-                    <td>(g)</td><td>紅燈號誌</td><td><img src="橫4_紅圓.jpg" alt="主要號誌 (g)" style="width: 40px;"></td><td>綠色箭頭長亮</td><td><img src="直_綠箭.jpg" alt="左轉號誌 (g)" style="width: 20px;"></td><td>保護左轉</td>
+                    <td>(g)</td><td>紅燈號誌</td><td><img src="橫4_紅圓.jpg" alt="主要號誌 (g)" style="width: 50px;"></td><td>綠色箭頭長亮</td><td><img src="直_綠箭.jpg" alt="左轉號誌 (g)" style="width: 20px;"></td><td>保護左轉</td>
                 </tr>
                 <tr>
-                    <td>(h)</td><td>紅燈號誌</td><td><img src="橫4_紅圓.jpg" alt="主要號誌 (h)" style="width: 40px;"></td><td>綠色箭頭長亮</td><td><img src="直_綠圓.png" alt="左轉號誌 (h)" style="width: 20px;"></td><td>保護左轉</td>
+                    <td>(h)</td><td>紅燈號誌</td><td><img src="橫4_紅圓.jpg" alt="主要號誌 (h)" style="width: 50px;"></td><td>綠色箭頭長亮</td><td><img src="直_綠圓.png" alt="左轉號誌 (h)" style="width: 20px;"></td><td>保護左轉</td>
                 </tr>
             </table>
         </div>        
