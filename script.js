@@ -130,7 +130,7 @@ const questions = [
 const demoQuestion = {
     question: "示範題目：如果您想左轉，並且看到顯示的交通號誌，您會...",
     options: ["直接左轉", "讓行，等待間隙", "停下"],
-    answer: 2,  // 假設正確答案為"讓行，等待間隙"
+    answer: 2,  
     video: "video0.mp4"
 };
 
