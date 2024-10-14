@@ -255,15 +255,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 }, 100);
             }
-            else{
-                videoElement.currentTime = 3;
-            }
         };
     
         videoElement.onended = () => {
             if (!hasOptionsShown) {
                 displayOptions(questionData, isDemoQuestion);
-                hasOptionsShown = true;
             }
             // 影片第一次播放完畢後，回到第3秒並進行循環播放
             videoElement.currentTime = 3;
