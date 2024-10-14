@@ -166,6 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const agreeButton = document.getElementById("agree-button");
     const surveyIntro = document.getElementById("survey-intro");
 
+    
     // 當按下同意按鈕後，隱藏問卷說明並顯示基本資料表單
     agreeButton.addEventListener("click", () => {
         surveyIntro.classList.add("hidden");
@@ -200,6 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
+
     startButton.onclick = () => {
         isDemo = true;
         mainMenu.classList.add("hidden");
@@ -207,9 +209,11 @@ document.addEventListener("DOMContentLoaded", () => {
         loadDemoQuestion();
     };
 
+
     function loadDemoQuestion() {
         loadQuestionContent(demoQuestion, true);
     }
+
 
     function loadQuestion(index) {
         const currentQuestion = questions[index];
@@ -219,12 +223,11 @@ document.addEventListener("DOMContentLoaded", () => {
     function loadQuestionContent(questionData, isDemoQuestion) {
         let hasOptionsShown = false;
         let firstplay = false;
-        let firstFullPlayDone = false;
-
+    
         questionElement.textContent = questionData.question;
         optionsContainer.innerHTML = "";
         optionsContainer.classList.add("hidden");
-
+    
         videoElement.src = questionData.video;
         videoElement.removeAttribute("controls");
         videoElement.setAttribute("autoplay", "true");
@@ -232,46 +235,46 @@ document.addEventListener("DOMContentLoaded", () => {
         videoElement.setAttribute("playsinline", "true");
         videoElement.setAttribute("webkit-playsinline", "true");
         videoElement.controls = false;
-
+    
         videoElement.addEventListener("keydown", (event) => {
             event.preventDefault();
         });
-
+    
         videoElement.onplaying = () => {
             if (!firstplay) {
                 startTime = new Date();
                 firstplay = true;
-                setTimeout(() => {
-                    if (!firstFullPlayDone) {
-                        displayOptions(questionData, isDemoQuestion);
-                        hasOptionsShown = true;
+    
+                const intervalId = setInterval(() => {
+                    if (videoElement.currentTime >= 3) {
+                        clearInterval(intervalId);
+                        if (!hasOptionsShown) {
+                            displayOptions(questionData, isDemoQuestion);
+                            hasOptionsShown = true;
+                        }
                     }
-                }, 3000); // 在影片播放後 3 秒顯示選項
+                }, 100);
             }
         };
-
+    
         videoElement.onended = () => {
-            if (!firstFullPlayDone) {
-                // 第一次完整播放結束
-                firstFullPlayDone = true;
-                videoElement.currentTime = 3;
-                videoElement.loop = true;
-                videoElement.play().catch((error) => {
-                    console.error("影片無法自動播放: ", error);
-                });
-            } else {
-                if (!hasOptionsShown) {
-                    displayOptions(questionData, isDemoQuestion);
-                    hasOptionsShown = true;
-                }
+            if (!hasOptionsShown) {
+                displayOptions(questionData, isDemoQuestion);
+                hasOptionsShown = true;
             }
+            // 影片第一次播放完畢後，回到第3秒並進行循環播放
+            videoElement.currentTime = 3;
+            videoElement.loop = true;
+            videoElement.play().catch((error) => {
+                console.error("影片無法自動播放: ", error);
+            });
         };
-
+    
         videoElement.play().catch((error) => {
             console.error("影片無法自動播放: ", error);
         });
     }
-
+    
     function displayOptions(currentQuestion, isDemoQuestion) {
         currentQuestion.options.forEach((option, i) => {
             const button = document.createElement("button");
@@ -286,7 +289,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         optionsContainer.classList.remove("hidden");
     }
-
+    
     function selectOption(selectedIndex, isDemoQuestion) {
         const endTime = new Date();
         const timeTaken = (endTime - startTime) / 1000 - 3.0;
@@ -334,6 +337,7 @@ document.addEventListener("DOMContentLoaded", () => {
             loadQuestion(currentQuestionIndex);
         };
     }
+
 
     function showOpenEndedQuestions() {
         document.getElementById("quiz-container").classList.add("hidden");
@@ -392,6 +396,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         };
     }
+
     function showResults() {
         questionElement.textContent = "測驗結束！";
         optionsContainer.innerHTML = "";
