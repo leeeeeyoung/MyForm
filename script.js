@@ -244,24 +244,15 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!firstplay) {
                 startTime = new Date();
                 firstplay = true;
-    
-                const intervalId = setInterval(() => {
-                    if (videoElement.currentTime >= 3) {
-                        clearInterval(intervalId);
-                        if (!hasOptionsShown) {
-                            displayOptions(questionData, isDemoQuestion);
-                            hasOptionsShown = true;
-                        }
-                    }
-                }, 100);
             }
         };
     
         videoElement.onended = () => {
             if (!hasOptionsShown) {
                 displayOptions(questionData, isDemoQuestion);
+                hasOptionsShown = true;
             }
-            // 影片第一次播放完畢後，回到第3秒並進行循環播放
+            // 當影片第一次完整播放後，回到第3秒並開始循環播放直到按下選項
             videoElement.currentTime = 3;
             videoElement.loop = true;
             videoElement.play().catch((error) => {
