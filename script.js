@@ -255,6 +255,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 }, 100);
             }
+            else{
+                videoElement.currentTime = 3;
+            }
         };
     
         videoElement.onended = () => {
