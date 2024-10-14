@@ -254,7 +254,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             // 當影片第一次完整播放後，回到第3秒並開始循環播放直到按下選項
             videoElement.currentTime = 3;
-            videoElement.loop = true;
             videoElement.play().catch((error) => {
                 console.error("影片無法自動播放: ", error);
             });
@@ -268,26 +267,35 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         };
     
+        videoElement.addEventListener("timeupdate", () => {
+            if (videoElement.loop && videoElement.currentTime >= videoElement.duration) {
+                videoElement.currentTime = 3;
+                videoElement.play().catch((error) => {
+                    console.error("影片無法自動播放: ", error);
+                });
+            }
+        });
+    
         videoElement.play().catch((error) => {
             console.error("影片無法自動播放: ", error);
         });
     }
-    
-    function displayOptions(currentQuestion, isDemoQuestion) {
-        optionsContainer.innerHTML = "";
-        currentQuestion.options.forEach((option, i) => {
-            const button = document.createElement("button");
-            button.textContent = option;
-            button.onclick = () => {
-                // 當受訪者按下選項後，停止影片播放並取消循環
-                videoElement.pause();
-                videoElement.loop = false;
-                selectOption(i, isDemoQuestion);
-            };
-            optionsContainer.appendChild(button);
-        });
-        optionsContainer.classList.remove("hidden");
-    }
+
+function displayOptions(currentQuestion, isDemoQuestion) {
+    optionsContainer.innerHTML = "";
+    currentQuestion.options.forEach((option, i) => {
+        const button = document.createElement("button");
+        button.textContent = option;
+        button.onclick = () => {
+            // 當受訪者按下選項後，停止影片播放並取消循環
+            videoElement.pause();
+            videoElement.loop = false;
+            selectOption(i, isDemoQuestion);
+        };
+        optionsContainer.appendChild(button);
+    });
+    optionsContainer.classList.remove("hidden");
+}
     
     function selectOption(selectedIndex, isDemoQuestion) {
         const endTime = new Date();
