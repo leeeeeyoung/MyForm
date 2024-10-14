@@ -281,21 +281,21 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-function displayOptions(currentQuestion, isDemoQuestion) {
-    optionsContainer.innerHTML = "";
-    currentQuestion.options.forEach((option, i) => {
-        const button = document.createElement("button");
-        button.textContent = option;
-        button.onclick = () => {
-            // 當受訪者按下選項後，停止影片播放並取消循環
-            videoElement.pause();
-            videoElement.loop = false;
-            selectOption(i, isDemoQuestion);
-        };
-        optionsContainer.appendChild(button);
-    });
-    optionsContainer.classList.remove("hidden");
-}
+    function displayOptions(currentQuestion, isDemoQuestion) {
+        optionsContainer.innerHTML = "";
+        currentQuestion.options.forEach((option, i) => {
+            const button = document.createElement("button");
+            button.textContent = option;
+            button.onclick = () => {
+                // 當受訪者按下選項後，停止影片播放並取消循環
+                videoElement.pause();
+                videoElement.loop = false;
+                selectOption(i, isDemoQuestion);
+            };
+            optionsContainer.appendChild(button);
+        });
+        optionsContainer.classList.remove("hidden");
+    }
     
     function selectOption(selectedIndex, isDemoQuestion) {
         const endTime = new Date();
