@@ -223,6 +223,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function loadQuestionContent(questionData, isDemoQuestion) {
         let hasOptionsShown = false;
         let firstplay = false;
+        let firstFullPlayDone = false;
     
         questionElement.textContent = questionData.question;
         optionsContainer.innerHTML = "";
@@ -248,7 +249,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const intervalId = setInterval(() => {
                     if (videoElement.currentTime >= 3) {
                         clearInterval(intervalId);
-                        if (!hasOptionsShown) {
+                        if (!hasOptionsShown && firstFullPlayDone) {
                             displayOptions(questionData, isDemoQuestion);
                             hasOptionsShown = true;
                         }
@@ -258,16 +259,20 @@ document.addEventListener("DOMContentLoaded", () => {
         };
     
         videoElement.onended = () => {
-            if (!hasOptionsShown) {
-                displayOptions(questionData, isDemoQuestion);
-                hasOptionsShown = true;
+            if (!firstFullPlayDone) {
+                // 第一次完整播放結束
+                firstFullPlayDone = true;
+                videoElement.currentTime = 3;
+                videoElement.loop = true;
+                videoElement.play().catch((error) => {
+                    console.error("影片無法自動播放: ", error);
+                });
+            } else {
+                if (!hasOptionsShown) {
+                    displayOptions(questionData, isDemoQuestion);
+                    hasOptionsShown = true;
+                }
             }
-            // 影片第一次播放完畢後，回到第3秒並進行循環播放
-            videoElement.currentTime = 3;
-            videoElement.loop = true;
-            videoElement.play().catch((error) => {
-                console.error("影片無法自動播放: ", error);
-            });
         };
     
         videoElement.play().catch((error) => {
@@ -289,7 +294,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         optionsContainer.classList.remove("hidden");
     }
-    
+        
     function selectOption(selectedIndex, isDemoQuestion) {
         const endTime = new Date();
         const timeTaken = (endTime - startTime) / 1000 - 3.0;
