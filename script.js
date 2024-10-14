@@ -260,12 +260,21 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         };
     
+        // 每當影片播放到第3秒時顯示選項
+        videoElement.ontimeupdate = () => {
+            if (videoElement.currentTime >= 3 && !hasOptionsShown) {
+                displayOptions(questionData, isDemoQuestion);
+                hasOptionsShown = true;
+            }
+        };
+    
         videoElement.play().catch((error) => {
             console.error("影片無法自動播放: ", error);
         });
     }
     
     function displayOptions(currentQuestion, isDemoQuestion) {
+        optionsContainer.innerHTML = "";
         currentQuestion.options.forEach((option, i) => {
             const button = document.createElement("button");
             button.textContent = option;
