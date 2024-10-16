@@ -11,8 +11,10 @@ body {
     align-items: center;
     box-sizing: border-box;
     color: #212121;
-    transition: $1 0.6s ease;
+    height: 100vh;
+    justify-content: center;
 }
+
 
 @keyframes gradientAnimation {
     0% { background-position: 0% 50%; }
@@ -268,6 +270,8 @@ button:hover {
     max-width: 1100px;
     width: 100%;
     text-align: center;
+    height: 100%;
+    margin: auto;
 }
 
 /* 按鈕選項區域設計 */
