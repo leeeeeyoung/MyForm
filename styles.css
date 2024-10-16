@@ -1,7 +1,7 @@
-/* 設置科幻ins風格背景及動畫 */
+/* 設置淡藍ins風格背景及動畫 */
 body {
     font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(135deg, #141e30, #243b55, #6f86d6);
+    background: linear-gradient(135deg, #cfd9df, #e2ebf0);
     background-size: 400% 400%;
     animation: gradientBackground 15s ease infinite;
     margin: 0;
@@ -10,7 +10,7 @@ body {
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
-    color: #e0e0e0;
+    color: #333;
     transition: all 0.5s ease;
 }
 
@@ -22,10 +22,10 @@ body {
 
 /* 問卷區塊樣式 */
 .question-block {
-    background: #1c2541;
-    padding: 40px;
+    background: #ffffff;
+    padding: 50px;
     border-radius: 20px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
     margin-bottom: 30px;
     width: 90%;
     transition: all 0.4s ease;
@@ -33,12 +33,12 @@ body {
 
 .question-block:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.3);
 }
 
 .question-block label {
     font-weight: 600;
-    color: #a9bcd0;
+    color: #5f6c7b;
     margin-bottom: 15px;
     display: block;
 }
@@ -49,61 +49,61 @@ body {
     flex-direction: column;
     gap: 15px;
     padding: 20px;
-    background: #243b55;
+    background: #e2ebf0;
     border-radius: 15px;
 }
 
 .options label {
     display: flex;
     align-items: center;
-    background: #2e3a59;
+    background: #ffffff;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: all 0.4s ease;
 }
 
 .options label:hover {
     transform: scale(1.05);
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
 }
 
 .options input[type="radio"] {
     margin-right: 15px;
-    accent-color: #6f86d6;
+    accent-color: #a8c0ff;
 }
 
 /* 問卷介紹區塊設計 */
 #survey-intro {
-    background: rgba(20, 30, 48, 0.9);
-    padding: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 60px;
     border-radius: 20px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
     max-width: 800px;
     text-align: center;
     transition: all 0.4s ease;
 }
 
 #survey-intro:hover {
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
 #survey-intro h1 {
     font-size: 32px;
     margin-bottom: 25px;
-    color: #c3d3e7;
+    color: #5f6c7b;
 }
 
 #survey-intro p {
     font-size: 18px;
-    color: #a9bcd0;
+    color: #7a8a99;
     line-height: 1.8;
     margin-bottom: 25px;
 }
 
 #survey-intro button {
-    background-color: #6f86d6;
+    background-color: #a8c0ff;
     color: white;
     padding: 15px 30px;
     border: none;
@@ -114,7 +114,7 @@ body {
 }
 
 #survey-intro button:hover {
-    background-color: #4a67b1;
+    background-color: #8aa8ff;
     transform: scale(1.05);
 }
 
@@ -127,12 +127,12 @@ body {
     text-align: center;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
     transition: all 0.4s ease;
 }
 
 .styled-table thead tr {
-    background-color: #6f86d6;
+    background-color: #a8c0ff;
     color: #fff;
     font-weight: bold;
 }
@@ -144,20 +144,20 @@ body {
 }
 
 .styled-table tbody tr {
-    background-color: #2e3a59;
+    background-color: #f0f4f8;
 }
 
 .styled-table tbody tr:hover {
-    background-color: #394973;
+    background-color: #e0e8ef;
     transform: scale(1.02);
 }
 
 /* 表單區域設計 */
 #basic-info-form {
-    background: #1c2541;
-    padding: 60px;
+    background: #ffffff;
+    padding: 70px;
     border-radius: 20px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
     max-width: 800px;
     text-align: center;
     transition: all 0.4s ease;
@@ -169,7 +169,7 @@ body {
 
 #basic-info-form h1 {
     font-size: 34px;
-    color: #c3d3e7;
+    color: #5f6c7b;
     margin-bottom: 40px;
 }
 
@@ -179,20 +179,20 @@ body {
     margin-bottom: 30px;
     border: 1px solid #ddd;
     border-radius: 10px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
     font-size: 18px;
-    background-color: #2e3a59;
-    color: #e0e0e0;
+    background-color: #f0f4f8;
+    color: #333;
     transition: all 0.4s ease;
 }
 
 #basic-info-form input:focus, #basic-info-form select:focus {
-    border-color: #6f86d6;
+    border-color: #a8c0ff;
     outline: none;
 }
 
 #submit-info-button {
-    background: linear-gradient(to right, #6f86d6, #48c6ef);
+    background: linear-gradient(to right, #a8c0ff, #fbc2eb);
     color: #fff;
     border: none;
     border-radius: 30px;
@@ -203,17 +203,17 @@ body {
 }
 
 #submit-info-button:hover {
-    background: linear-gradient(to right, #4a67b1, #3ca5d9);
+    background: linear-gradient(to right, #8aa8ff, #f8a5d8);
     transform: translateY(-5px);
 }
 
 /* 測驗區設計 */
 #quiz-container {
-    background: #1c2541;
-    padding: 60px;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    max-width: 1200px;
+    background: #ffffff;
+    padding: 80px;
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    max-width: 1400px;
     width: 100%;
     text-align: center;
     margin-top: 50px;
@@ -221,14 +221,14 @@ body {
 }
 
 #quiz-container:hover {
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
 }
 
 /* 一般按鈕設計 */
 button {
     padding: 15px 30px;
     font-size: 22px;
-    background: #6f86d6;
+    background: #a8c0ff;
     color: #fff;
     border: none;
     border-radius: 20px;
@@ -238,18 +238,18 @@ button {
 }
 
 button:hover {
-    background: #4a67b1;
+    background: #8aa8ff;
     transform: translateY(-5px);
 }
 
 /* 結果區設計 */
 #result-container {
-    padding: 40px;
-    background: #243b55;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    padding: 50px;
+    background: #e2ebf0;
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     transition: all 0.4s ease;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 60px auto;
     text-align: center;
 }
@@ -259,14 +259,14 @@ button:hover {
 }
 
 #result-container h2 {
-    color: #6f86d6;
+    color: #a8c0ff;
     font-size: 30px;
     margin-bottom: 25px;
 }
 
 #result-container p {
     font-size: 20px;
-    color: #a9bcd0;
+    color: #7a8a99;
 }
 
 /* 結果表格樣式 */
@@ -274,7 +274,7 @@ button:hover {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 40px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
     transition: all 0.4s ease;
 }
 
@@ -285,17 +285,17 @@ button:hover {
 }
 
 #result-table th {
-    background-color: #6f86d6;
+    background-color: #a8c0ff;
     color: #fff;
     font-weight: bold;
 }
 
 #result-table tr:nth-child(even) {
-    background-color: #2e3a59;
+    background-color: #f0f4f8;
 }
 
 #result-table tr:hover {
-    background-color: #394973;
+    background-color: #e0e8ef;
 }
 
 /* 按鈕選項區域設計 */
@@ -316,20 +316,20 @@ button:hover {
     border-radius: 25px;
     cursor: pointer;
     transition: all 0.4s ease;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .button-options button:hover {
     background-color: #0056b3;
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
 /* 樣式調整過的checkbox */
 input[type="checkbox"] {
     width: 30px;
     height: 30px;
-    accent-color: #6f86d6;
+    accent-color: #a8c0ff;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.4s ease;
@@ -353,17 +353,17 @@ textarea {
     border: 1px solid #ddd;
     transition: all 0.4s ease;
     margin-bottom: 30px;
-    background-color: #2e3a59;
-    color: #e0e0e0;
+    background-color: #f0f4f8;
+    color: #333;
 }
 
 textarea:focus {
-    border-color: #6f86d6;
+    border-color: #a8c0ff;
     outline: none;
 }
 
 textarea:hover {
-    border-color: #6f86d6;
+    border-color: #a8c0ff;
 }
 
 /* 加強動態效果，讓網頁更有流暢感 */
@@ -384,21 +384,21 @@ img:hover, video:hover {
 
 /* 頁腳設計 */
 footer {
-    background: #243b55;
-    color: #fff;
-    padding: 30px;
+    background: #e2ebf0;
+    color: #5f6c7b;
+    padding: 40px;
     text-align: center;
-    border-radius: 20px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 25px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
     transition: all 0.4s ease;
     margin-top: 60px;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
 }
 
 footer:hover {
-    background: #1c2541;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    background: #cfd9df;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     transform: translateY(-5px);
 }
 
@@ -409,12 +409,12 @@ footer p {
 
 /* 添加導航欄樣式 */
 nav {
-    background: #1c2541;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
     margin-bottom: 30px;
     display: flex;
     justify-content: space-between;
@@ -423,7 +423,7 @@ nav {
 }
 
 nav a {
-    color: #6f86d6;
+    color: #a8c0ff;
     text-decoration: none;
     font-weight: bold;
     font-size: 20px;
@@ -432,12 +432,12 @@ nav a {
 }
 
 nav a:hover {
-    color: #48c6ef;
+    color: #8aa8ff;
     transform: scale(1.1);
 }
 
 nav .logo {
     font-size: 28px;
     font-weight: bold;
-    color: #6f86d6;
+    color: #a8c0ff;
 }
