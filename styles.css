@@ -1,437 +1,292 @@
-/* 基本設置 */
+/* 設置ins風格背景及動畫 */
 body {
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #f8f9fa);
-    background-size: 200% 200%;
-    animation: gradientAnimation 10s ease infinite;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad390);
+    background-size: 400% 400%;
+    animation: gradientBackground 15s ease infinite;
     margin: 0;
     padding: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
-    color: #212121;
-    transition: $1 0.6s ease;
+    color: #333;
+    transition: all 0.5s ease;
 }
 
-@keyframes gradientAnimation {
+@keyframes gradientBackground {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
+/* 問卷區塊樣式 */
+.question-block {
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 85%;
+    transition: all 0.4s ease;
+}
+
 .question-block:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
 }
 
 .question-block label {
-    font-weight: 500;
-    color: #333;
-    display: block;
+    font-weight: 600;
+    color: #555;
     margin-bottom: 10px;
+    display: block;
 }
 
+/* 選項設計 */
 .options {
     display: flex;
-    justify-content: space-around;
-    padding: 10px;
-    background: linear-gradient(135deg, #e1bee7, #e0f7fa);
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    background: #fafafa;
     border-radius: 10px;
 }
 
 .options label {
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #f0f4c3, #ffffff);
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    transition: $1 0.6s ease;
+    transition: all 0.4s ease;
 }
 
 .options label:hover {
-    transform: scale(1.1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .options input[type="radio"] {
-    margin-right: 8px;
+    margin-right: 12px;
+    accent-color: #ff9a9e;
 }
 
 /* 問卷介紹區塊設計 */
 #survey-intro {
-    background-color: white;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 85%;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     max-width: 600px;
-    margin-bottom: 40px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-    text-align: left;
-    transition: $1 0.6s ease;
+    text-align: center;
+    transition: all 0.4s ease;
 }
 
 #survey-intro:hover {
-    background-color: #f0f4c3;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 #survey-intro h1 {
-    font-size: 22px;
-    margin-bottom: 15px;
-    color: #333;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #444;
 }
 
 #survey-intro p {
-    font-size: 14px;
-    color: #555;
-    line-height: 1.5;
-    margin-bottom: 15px;
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
 
 #survey-intro button {
-    background-color: #4CAF50;
+    background-color: #ff9a9e;
     color: white;
-    padding: 8px 16px;
+    padding: 12px 24px;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
-    font-size: 14px;
-    transition: $1 0.6s ease;
+    font-size: 16px;
+    transition: all 0.4s ease;
 }
 
 #survey-intro button:hover {
-    background-color: #45a049;
-    transform: scale(1.1);
+    background-color: #e57373;
+    transform: scale(1.05);
 }
 
-
-/* 基本資料輸入區使用 Material Design 風格 */
-#basic-info-form {
-    background-color: white;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 85%;
-    max-width: 600px;
-    margin-bottom: 40px;
+/* 表格設計 */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 18px;
     text-align: center;
-    transition: $1 0.6s ease;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+}
+
+.styled-table thead tr {
+    background-color: #ff9a9e;
+    color: #fff;
+    font-weight: bold;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.styled-table tbody tr {
+    background-color: #f9f9f9;
+}
+
+.styled-table tbody tr:hover {
+    background-color: #f1f1f1;
+    transform: scale(1.01);
+}
+
+/* 表單區域設計 */
+#basic-info-form {
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    text-align: center;
+    transition: all 0.4s ease;
 }
 
 #basic-info-form:hover {
-    transform: scale(1.02);
+    transform: translateY(-10px);
 }
 
 #basic-info-form h1 {
-    font-size: 32px;
-    margin-bottom: 20px;
-    color: #212121;
-    text-align: center;
+    font-size: 30px;
+    color: #444;
+    margin-bottom: 30px;
 }
 
 #basic-info-form input, #basic-info-form select {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+    width: calc(100% - 20px);
+    padding: 15px;
+    margin-bottom: 25px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
     font-size: 16px;
     background-color: #fafafa;
-    transition: $1 0.6s ease;
+    transition: all 0.4s ease;
 }
 
-#basic-info-form input:hover, #basic-info-form select:hover {
-    border-color: #1E88E5;
+#basic-info-form input:focus, #basic-info-form select:focus {
+    border-color: #ff9a9e;
+    outline: none;
 }
 
 #submit-info-button {
-    padding: 14px 28px;
-    font-size: 18px;
-    background-color: #1E88E5;
-    color: white;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 25px;
+    padding: 15px 30px;
     cursor: pointer;
-    transition: $1 0.6s ease;
-    width: 100%;
-    max-width: 400px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    margin-top: 10px;
-    margin: 0 auto;
-    display: block;
+    font-size: 18px;
+    transition: all 0.4s ease;
 }
 
 #submit-info-button:hover {
-    background-color: #1565C0;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    transform: translateY(-3px);
+    background: linear-gradient(to right, #e57373, #f48fb1);
+    transform: translateY(-5px);
 }
 
-/* 保持原有設計風格的其他區域 */
-#main-menu, #quiz-container {
-    background-color: white;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    max-width: 900px;
-    width: 100%;
-    text-align: center;
-    margin-top: 20px;
-}
-
-/* 一般按鈕的設計 */
-button {
-    padding: 16px 36px;
-    font-size: 24px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: $1 0.6s ease;
-    margin: 10px;
-}
-
-button:hover {
-    background-color: #0056b3;
-    transform: translateY(-3px);
-}
-
-#demo-result-container {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    max-width: 800px;
-    margin: 40px auto;
-    text-align: center;
-    transition: $1 0.6s ease;
-}
-
-#demo-result-container:hover {
-    transform: scale(1.03);
-}
-
-#demo-result-container h2 {
-    color: #4CAF50;
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-#demo-result-container p {
-    font-size: 18px;
-    color: #555;
-    margin-bottom: 20px;
-}
-
-#demo-result-container p.correct {
-    color: #28a745;
-}
-
-#demo-result-container p.incorrect {
-    color: #dc3545;
-}
-
-#demo-result-container strong {
-    color: #333;
-}
-
-#start-real-quiz-button {
-    margin-top: 30px;
-    padding: 12px 24px;
-    font-size: 16px;
-    color: #ffffff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: $1 0.6s ease;
-}
-
-#start-real-quiz-button:hover {
-    background-color: #0056b3;
-    transform: translateY(-3px);
-}
-
-#start-real-quiz-button:focus {
-    outline: none;
-}
-
-/* 測驗區域的樣式 */
+/* 測驗區設計 */
 #quiz-container {
-    background-color: white;
+    background: #ffffff;
     padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
     max-width: 1100px;
     width: 100%;
     text-align: center;
-    height: 100%;
-    margin: auto;
+    margin-top: 30px;
+    transition: all 0.4s ease;
 }
 
-/* 按鈕選項區域設計 */
-#options-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
+#quiz-container:hover {
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* 視頻容器設計 */
-#video-container {
-    margin-bottom: 20px;
-    width: 100%;
-}
-
-video {
-    border-radius: 8px;
-    width: 100%;
-    height: 400px;
-    pointer-events: none;
-    user-select: none;
-    outline: none;
-    transition: $1 0.6s ease;
-}
-
-video:hover {
-    filter: brightness(1.1);
-}
-
-/* 按鈕在測驗區域的樣式 */
-#quiz-container button {
-    padding: 12px 28px;
+/* 一般按鈕設計 */
+button {
+    padding: 12px 25px;
     font-size: 20px;
-    border-radius: 6px;
-    background-color: #28a745;
-    color: white;
+    background: #ff9a9e;
+    color: #fff;
     border: none;
+    border-radius: 15px;
     cursor: pointer;
-    transition: $1 0.6s ease;
+    transition: all 0.4s ease;
+    margin: 15px;
 }
 
-#quiz-container button:hover {
-    background-color: #218838;
-    transform: translateY(-3px);
-}
-
-input[type="checkbox"] {
-    width: 25px;
-    height: 25px;
-    accent-color: #ff9a9e;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-/* 隱藏區域 */
-.hidden {
-    display: none;
-}
-
-/* 按鈕選項設計 */
-.button-options {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-    margin-top: 10px;
-}
-
-.button-options button {
-    padding: 12px 24px;
-    font-size: 18px;
-    color: #ffffff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: $1 0.6s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.button-options button:hover {
-    background-color: #0056b3;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-
-.button-options button:active {
-    transform: translateY(1px);
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-}
-
-.button-options button.active {
-    background-color: #004085;
-}
-
-.textarea-container {
-    margin-top: 10px;
-}
-
-textarea {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    box-sizing: border-box;
-    resize: vertical;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    transition: $1 0.6s ease;
-}
-
-textarea:hover {
-    border-color: #1E88E5;
+button:hover {
+    background: #e57373;
+    transform: translateY(-5px);
 }
 
 /* 結果區設計 */
 #result-container {
-    margin-top: 5%;
-    padding: 2.5%;
-    background-color: #f8f9fa;
-    border-radius: 1%;
-    box-shadow: 0 4% 12% rgba(0, 0, 0, 0.1);
-    transition: all 0.6s ease;
-    max-width: 80%;
+    padding: 25px;
+    background: #fafafa;
+    border-radius: 15px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: center;
 }
 
 #result-container:hover {
-    transform: scale(1.02);
+    transform: scale(1.03);
 }
 
-.question-block {
+#result-container h2 {
+    color: #ff9a9e;
+    font-size: 26px;
     margin-bottom: 20px;
 }
 
-.question-block label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+#result-container p {
+    font-size: 18px;
+    color: #666;
 }
 
+/* 結果表格樣式 */
 #result-table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
-    transition: $1 0.6s ease;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
 }
 
 #result-table th, #result-table td {
     border: 1px solid #ddd;
     padding: 16px;
+    text-align: center;
 }
 
 #result-table th {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #ff9a9e;
+    color: #fff;
     font-weight: bold;
-    text-align: center;
-}
-
-#result-table td {
-    text-align: center;
 }
 
 #result-table tr:nth-child(even) {
@@ -439,64 +294,148 @@ textarea:hover {
 }
 
 #result-table tr:hover {
-    background-color: #ddd;
-}
-
-#summary {
-    font-size: 1.2em;
-    color: #333;
-    margin-top: 20px;
-}
-
-/* 樣式化表格 */
-.styled-table {
-    margin: 20px auto;
-    border-collapse: collapse;
-    font-size: 18px;
-    min-width: 600px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-    transition: $1 0.6s ease;
-}
-
-.styled-table td {
-    padding: 16px 20px;
-    border: 1px solid #ddd;
-    text-align: center;
-}
-
-.styled-table tr {
-    background-color: #f3f3f3;
-    color: #333;
-}
-
-.styled-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-.styled-table tr:hover {
     background-color: #f1f1f1;
+}
+
+/* 按鈕選項區域設計 */
+.button-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.button-options button {
+    padding: 14px 28px;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.button-options button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 樣式調整過的checkbox */
+input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+    accent-color: #ff9a9e;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+input[type="checkbox"]:hover {
+    transform: scale(1.1);
+}
+
+/* 隱藏區域樣式 */
+.hidden {
+    display: none;
+}
+
+/* Textarea 樣式 */
+textarea {
+    width: calc(100% - 20px);
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    transition: all 0.4s ease;
+    margin-bottom: 20px;
+}
+
+textarea:focus {
+    border-color: #ff9a9e;
+    outline: none;
+}
+
+textarea:hover {
+    border-color: #ff9a9e;
+}
+
+/* 加強動態效果，讓網頁更有流暢感 */
+* {
+    transition: all 0.4s ease;
+}
+
+/* 圖片視頻hover效果 */
+img, video {
+    border-radius: 10px;
+    transition: all 0.4s ease;
+}
+
+img:hover, video:hover {
+    filter: brightness(1.1);
     transform: scale(1.02);
 }
 
-.styled-table td:first-child {
-    border-left: 0;
+/* 漏掉的CSS補充 */
+/* 頁腳設計 */
+footer {
+    background: #ff9a9e;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    margin-top: 40px;
+    width: 100%;
+    max-width: 1100px;
 }
 
-.styled-table td:last-child {
-    border-right: 0;
+footer:hover {
+    background: #e57373;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
 }
 
-.required {
-    color: red;
+footer p {
+    font-size: 16px;
+    margin: 0;
 }
 
-.options label {
+/* 添加導航欄樣式 */
+nav {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1100px;
+    margin-bottom: 20px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    margin-bottom: 8px;
-    cursor: pointer;
+    transition: all 0.4s ease;
 }
 
-.options input[type="radio"] {
-    margin-right: 10px;
+nav a {
+    color: #ff9a9e;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 0 15px;
+    transition: all 0.4s ease;
+}
+
+nav a:hover {
+    color: #e57373;
+    transform: scale(1.1);
+}
+
+nav .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff9a9e;
 }
