@@ -209,18 +209,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Add event listeners to checkboxes to ensure all rules are read
-    checkboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', function () {
-            if (areAllCheckboxesChecked()) {
-                startButton.disabled = false;
-            } else {
-                startButton.disabled = true;
-            }
-        });
-    });
+    // checkboxes.forEach(checkbox => {
+    //     checkbox.addEventListener('change', function () {
+    //         if (areAllCheckboxesChecked()) {
+    //             startButton.disabled = false;
+    //         } else {
+    //             startButton.disabled = true;
+    //         }
+    //     });
+    // });
 
     // Initially disable the start button until all checkboxes are checked
-    startButton.disabled = true;
+    // startButton.disabled = true;
 
     startButton.onclick = () => {
         if (areAllCheckboxesChecked()) {
