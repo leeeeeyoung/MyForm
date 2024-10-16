@@ -202,11 +202,34 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
 
+    // Function to check if all checkboxes are checked
+    function areAllCheckboxesChecked() {
+        return Array.from(checkboxes).every(checkbox => checkbox.checked);
+    }
+
+    // Add event listeners to checkboxes to ensure all rules are read
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function () {
+            if (areAllCheckboxesChecked()) {
+                startButton.disabled = false;
+            } else {
+                startButton.disabled = true;
+            }
+        });
+    });
+
+    // Initially disable the start button until all checkboxes are checked
+    startButton.disabled = true;
+
     startButton.onclick = () => {
-        isDemo = true;
-        mainMenu.classList.add("hidden");
-        quizContainer.classList.remove("hidden");
-        loadDemoQuestion();
+        if (areAllCheckboxesChecked()) {
+            isDemo = true;
+            mainMenu.classList.add("hidden");
+            quizContainer.classList.remove("hidden");
+            loadDemoQuestion();
+        } else {
+            alert("請先閱讀並勾選所有的規則。");
+        }
     };
 
 
