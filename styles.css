@@ -11,8 +11,10 @@ body {
     align-items: center;
     box-sizing: border-box;
     color: #212121;
-    transition: $1 0.6s ease;
+    height: 100vh;
+    justify-content: center;
 }
+
 
 @keyframes gradientAnimation {
     0% { background-position: 0% 50%; }
@@ -68,7 +70,7 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     width: 85%;
     max-width: 600px;
-    margin-bottom: 40px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    margin-bottom: 40px;
     text-align: left;
     transition: $1 0.6s ease;
 }
@@ -114,7 +116,7 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     width: 85%;
     max-width: 600px;
-    margin-bottom: 40px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    margin-bottom: 40px;
     text-align: center;
     transition: $1 0.6s ease;
 }
@@ -173,15 +175,12 @@ body {
 #main-menu, #quiz-container {
     background-color: white;
     padding: 40px;
-    border-radius: 12px;
+    border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    max-width: 1100px;
+    max-width: 900px;
     width: 100%;
     text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-top: 20px;
 }
 
 /* 一般按鈕的設計 */
@@ -208,7 +207,7 @@ button:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 20px;
     max-width: 800px;
-    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    margin: 40px auto;
     text-align: center;
     transition: $1 0.6s ease;
 }
@@ -271,6 +270,8 @@ button:hover {
     max-width: 1100px;
     width: 100%;
     text-align: center;
+    height: 100%;
+    margin: auto;
 }
 
 /* 按鈕選項區域設計 */
@@ -380,13 +381,13 @@ textarea:hover {
 
 /* 結果區設計 */
 #result-container {
-    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-    padding: 20px;
+    margin-top: 5%;
+    padding: 2.5%;
     background-color: #f8f9fa;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: $1 0.6s ease;
-    width: 80%;
+    border-radius: 1%;
+    box-shadow: 0 4% 12% rgba(0, 0, 0, 0.1);
+    transition: all 0.6s ease;
+    max-width: 80%;
 }
 
 #result-container:hover {
@@ -437,7 +438,7 @@ textarea:hover {
 #summary {
     font-size: 1.2em;
     color: #333;
-    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    margin-top: 20px;
 }
 
 /* 樣式化表格 */
