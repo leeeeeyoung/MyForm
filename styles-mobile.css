@@ -38,7 +38,7 @@ body {
 .options label {
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #f0f4c3, #ffffff);
+    background: linear-gradient(135deg, #ffffff, #f0f4c3);
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
