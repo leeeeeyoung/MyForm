@@ -1,16 +1,16 @@
-/* 設置ins風格背景及動畫 */
+/* 設置科幻ins風格背景及動畫 */
 body {
     font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad390);
+    background: linear-gradient(135deg, #141e30, #243b55, #6f86d6);
     background-size: 400% 400%;
     animation: gradientBackground 15s ease infinite;
     margin: 0;
-    padding: 40px;
+    padding: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
-    color: #333;
+    color: #e0e0e0;
     transition: all 0.5s ease;
 }
 
@@ -22,24 +22,24 @@ body {
 
 /* 問卷區塊樣式 */
 .question-block {
-    background: #fff;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    width: 85%;
+    background: #1c2541;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    margin-bottom: 30px;
+    width: 90%;
     transition: all 0.4s ease;
 }
 
 .question-block:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4);
 }
 
 .question-block label {
     font-weight: 600;
-    color: #555;
-    margin-bottom: 10px;
+    color: #a9bcd0;
+    margin-bottom: 15px;
     display: block;
 }
 
@@ -47,74 +47,74 @@ body {
 .options {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding: 15px;
-    background: #fafafa;
-    border-radius: 10px;
+    gap: 15px;
+    padding: 20px;
+    background: #243b55;
+    border-radius: 15px;
 }
 
 .options label {
     display: flex;
     align-items: center;
-    background: #fff;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    background: #2e3a59;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     cursor: pointer;
     transition: all 0.4s ease;
 }
 
 .options label:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
 }
 
 .options input[type="radio"] {
-    margin-right: 12px;
-    accent-color: #ff9a9e;
+    margin-right: 15px;
+    accent-color: #6f86d6;
 }
 
 /* 問卷介紹區塊設計 */
 #survey-intro {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 35px;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-    max-width: 600px;
+    background: rgba(20, 30, 48, 0.9);
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
     text-align: center;
     transition: all 0.4s ease;
 }
 
 #survey-intro:hover {
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 #survey-intro h1 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #444;
+    font-size: 32px;
+    margin-bottom: 25px;
+    color: #c3d3e7;
 }
 
 #survey-intro p {
-    font-size: 16px;
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 20px;
+    font-size: 18px;
+    color: #a9bcd0;
+    line-height: 1.8;
+    margin-bottom: 25px;
 }
 
 #survey-intro button {
-    background-color: #ff9a9e;
+    background-color: #6f86d6;
     color: white;
-    padding: 12px 24px;
+    padding: 15px 30px;
     border: none;
-    border-radius: 25px;
+    border-radius: 30px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
     transition: all 0.4s ease;
 }
 
 #survey-intro button:hover {
-    background-color: #e57373;
+    background-color: #4a67b1;
     transform: scale(1.05);
 }
 
@@ -122,43 +122,43 @@ body {
 .styled-table {
     width: 100%;
     border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 18px;
+    margin: 40px 0;
+    font-size: 20px;
     text-align: center;
-    border-radius: 15px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     transition: all 0.4s ease;
 }
 
 .styled-table thead tr {
-    background-color: #ff9a9e;
+    background-color: #6f86d6;
     color: #fff;
     font-weight: bold;
 }
 
 .styled-table th,
 .styled-table td {
-    padding: 12px 15px;
+    padding: 20px;
     border-bottom: 1px solid #ddd;
 }
 
 .styled-table tbody tr {
-    background-color: #f9f9f9;
+    background-color: #2e3a59;
 }
 
 .styled-table tbody tr:hover {
-    background-color: #f1f1f1;
-    transform: scale(1.01);
+    background-color: #394973;
+    transform: scale(1.02);
 }
 
 /* 表單區域設計 */
 #basic-info-form {
-    background: #fff;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
+    background: #1c2541;
+    padding: 60px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    max-width: 800px;
     text-align: center;
     transition: all 0.4s ease;
 }
@@ -168,174 +168,175 @@ body {
 }
 
 #basic-info-form h1 {
-    font-size: 30px;
-    color: #444;
-    margin-bottom: 30px;
+    font-size: 34px;
+    color: #c3d3e7;
+    margin-bottom: 40px;
 }
 
 #basic-info-form input, #basic-info-form select {
-    width: calc(100% - 20px);
-    padding: 15px;
-    margin-bottom: 25px;
+    width: calc(100% - 30px);
+    padding: 20px;
+    margin-bottom: 30px;
     border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
-    font-size: 16px;
-    background-color: #fafafa;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    background-color: #2e3a59;
+    color: #e0e0e0;
     transition: all 0.4s ease;
 }
 
 #basic-info-form input:focus, #basic-info-form select:focus {
-    border-color: #ff9a9e;
+    border-color: #6f86d6;
     outline: none;
 }
 
 #submit-info-button {
-    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    background: linear-gradient(to right, #6f86d6, #48c6ef);
     color: #fff;
     border: none;
-    border-radius: 25px;
-    padding: 15px 30px;
+    border-radius: 30px;
+    padding: 20px 40px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 20px;
     transition: all 0.4s ease;
 }
 
 #submit-info-button:hover {
-    background: linear-gradient(to right, #e57373, #f48fb1);
+    background: linear-gradient(to right, #4a67b1, #3ca5d9);
     transform: translateY(-5px);
 }
 
 /* 測驗區設計 */
 #quiz-container {
-    background: #ffffff;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
-    max-width: 1100px;
+    background: #1c2541;
+    padding: 60px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    max-width: 1200px;
     width: 100%;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 50px;
     transition: all 0.4s ease;
 }
 
 #quiz-container:hover {
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
 }
 
 /* 一般按鈕設計 */
 button {
-    padding: 12px 25px;
-    font-size: 20px;
-    background: #ff9a9e;
+    padding: 15px 30px;
+    font-size: 22px;
+    background: #6f86d6;
     color: #fff;
     border: none;
-    border-radius: 15px;
+    border-radius: 20px;
     cursor: pointer;
     transition: all 0.4s ease;
-    margin: 15px;
+    margin: 20px;
 }
 
 button:hover {
-    background: #e57373;
+    background: #4a67b1;
     transform: translateY(-5px);
 }
 
 /* 結果區設計 */
 #result-container {
-    padding: 25px;
-    background: #fafafa;
-    border-radius: 15px;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    background: #243b55;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     transition: all 0.4s ease;
-    max-width: 800px;
-    margin: 40px auto;
+    max-width: 1000px;
+    margin: 60px auto;
     text-align: center;
 }
 
 #result-container:hover {
-    transform: scale(1.03);
+    transform: scale(1.05);
 }
 
 #result-container h2 {
-    color: #ff9a9e;
-    font-size: 26px;
-    margin-bottom: 20px;
+    color: #6f86d6;
+    font-size: 30px;
+    margin-bottom: 25px;
 }
 
 #result-container p {
-    font-size: 18px;
-    color: #666;
+    font-size: 20px;
+    color: #a9bcd0;
 }
 
 /* 結果表格樣式 */
 #result-table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 30px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     transition: all 0.4s ease;
 }
 
 #result-table th, #result-table td {
     border: 1px solid #ddd;
-    padding: 16px;
+    padding: 20px;
     text-align: center;
 }
 
 #result-table th {
-    background-color: #ff9a9e;
+    background-color: #6f86d6;
     color: #fff;
     font-weight: bold;
 }
 
 #result-table tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #2e3a59;
 }
 
 #result-table tr:hover {
-    background-color: #f1f1f1;
+    background-color: #394973;
 }
 
 /* 按鈕選項區域設計 */
 .button-options {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 25px;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .button-options button {
-    padding: 14px 28px;
-    font-size: 18px;
+    padding: 18px 36px;
+    font-size: 20px;
     color: #ffffff;
     background-color: #007bff;
     border: none;
-    border-radius: 20px;
+    border-radius: 25px;
     cursor: pointer;
     transition: all 0.4s ease;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .button-options button:hover {
     background-color: #0056b3;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
 /* 樣式調整過的checkbox */
 input[type="checkbox"] {
-    width: 25px;
-    height: 25px;
-    accent-color: #ff9a9e;
-    border-radius: 4px;
+    width: 30px;
+    height: 30px;
+    accent-color: #6f86d6;
+    border-radius: 5px;
     cursor: pointer;
     transition: all 0.4s ease;
 }
 
 input[type="checkbox"]:hover {
-    transform: scale(1.1);
+    transform: scale(1.15);
 }
 
 /* 隱藏區域樣式 */
@@ -345,22 +346,24 @@ input[type="checkbox"]:hover {
 
 /* Textarea 樣式 */
 textarea {
-    width: calc(100% - 20px);
-    padding: 15px;
-    font-size: 16px;
-    border-radius: 10px;
+    width: calc(100% - 30px);
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 15px;
     border: 1px solid #ddd;
     transition: all 0.4s ease;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    background-color: #2e3a59;
+    color: #e0e0e0;
 }
 
 textarea:focus {
-    border-color: #ff9a9e;
+    border-color: #6f86d6;
     outline: none;
 }
 
 textarea:hover {
-    border-color: #ff9a9e;
+    border-color: #6f86d6;
 }
 
 /* 加強動態效果，讓網頁更有流暢感 */
@@ -370,50 +373,49 @@ textarea:hover {
 
 /* 圖片視頻hover效果 */
 img, video {
-    border-radius: 10px;
+    border-radius: 15px;
     transition: all 0.4s ease;
 }
 
 img:hover, video:hover {
     filter: brightness(1.1);
-    transform: scale(1.02);
+    transform: scale(1.05);
 }
 
-/* 漏掉的CSS補充 */
 /* 頁腳設計 */
 footer {
-    background: #ff9a9e;
+    background: #243b55;
     color: #fff;
-    padding: 20px;
+    padding: 30px;
     text-align: center;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     transition: all 0.4s ease;
-    margin-top: 40px;
+    margin-top: 60px;
     width: 100%;
-    max-width: 1100px;
+    max-width: 1200px;
 }
 
 footer:hover {
-    background: #e57373;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+    background: #1c2541;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     transform: translateY(-5px);
 }
 
 footer p {
-    font-size: 16px;
+    font-size: 18px;
     margin: 0;
 }
 
 /* 添加導航欄樣式 */
 nav {
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    background: #1c2541;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     width: 100%;
-    max-width: 1100px;
-    margin-bottom: 20px;
+    max-width: 1200px;
+    margin-bottom: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -421,21 +423,21 @@ nav {
 }
 
 nav a {
-    color: #ff9a9e;
+    color: #6f86d6;
     text-decoration: none;
     font-weight: bold;
-    font-size: 18px;
-    margin: 0 15px;
+    font-size: 20px;
+    margin: 0 20px;
     transition: all 0.4s ease;
 }
 
 nav a:hover {
-    color: #e57373;
+    color: #48c6ef;
     transform: scale(1.1);
 }
 
 nav .logo {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
-    color: #ff9a9e;
+    color: #6f86d6;
 }
