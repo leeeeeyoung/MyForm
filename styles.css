@@ -1,7 +1,7 @@
 /* 基本設置 */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f8f9fa;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #f8f9fa);
     margin: 0;
     padding: 40px;
     display: flex;
@@ -9,11 +9,11 @@ body {
     align-items: center;
     box-sizing: border-box;
     color: #212121;
-    transition: background-color 0.5s ease-in-out;
+    transition: background 0.5s ease-in-out;
 }
 
 body:hover {
-    background-color: #e0f7fa;
+    background: linear-gradient(135deg, #a18cd1, #fbc2eb, #e0f7fa);
 }
 
 .question-block {
