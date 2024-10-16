@@ -409,7 +409,7 @@ textarea:hover {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
-    transition: transform 0.3s;
+    transition: transform 0.5s;
 }
 
 #result-table th, #result-table td {
