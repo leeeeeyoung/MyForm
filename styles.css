@@ -9,8 +9,12 @@ body {
     align-items: center;
     box-sizing: border-box;
     color: #212121;
+    transition: background-color 0.5s ease-in-out;
 }
 
+body:hover {
+    background-color: #e0f7fa;
+}
 
 .question-block {
     background: linear-gradient(135deg, #e0e7ff, #f8f9fa);
@@ -18,6 +22,12 @@ body {
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.question-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .question-block label {
@@ -43,18 +53,17 @@ body {
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .options label:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .options input[type="radio"] {
     margin-right: 8px;
 }
-
-
 
 /* 問卷介紹區塊設計 */
 #survey-intro {
@@ -66,6 +75,11 @@ body {
     max-width: 600px;
     margin-bottom: 40px;
     text-align: left;
+    transition: background-color 0.3s;
+}
+
+#survey-intro:hover {
+    background-color: #f0f4c3;
 }
 
 #survey-intro h1 {
@@ -89,13 +103,13 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 #survey-intro button:hover {
     background-color: #45a049;
+    transform: scale(1.1);
 }
-
 
 /* 基本資料輸入區使用 Material Design 風格 */
 #basic-info-form {
@@ -107,22 +121,18 @@ body {
     max-width: 600px;
     margin-bottom: 40px;
     text-align: center;
+    transition: transform 0.3s;
 }
 
-/* 基本資料輸入區的標題 */
+#basic-info-form:hover {
+    transform: scale(1.02);
+}
+
 #basic-info-form h1 {
     font-size: 32px;
     margin-bottom: 20px;
     color: #212121;
     text-align: center;
-}
-
-/* 電子郵件和駕駛資料的輸入框 */
-#basic-info-form label {
-    font-size: 16px;
-    color: #424242;
-    margin-bottom: 10px;
-    display: block;
 }
 
 #basic-info-form input, #basic-info-form select {
@@ -134,9 +144,13 @@ body {
     box-sizing: border-box;
     font-size: 16px;
     background-color: #fafafa;
+    transition: border-color 0.3s;
 }
 
-/* 提交按鈕的設計 */
+#basic-info-form input:hover, #basic-info-form select:hover {
+    border-color: #1E88E5;
+}
+
 #submit-info-button {
     padding: 14px 28px;
     font-size: 18px;
@@ -145,7 +159,7 @@ body {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
     width: 100%;
     max-width: 400px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
@@ -157,6 +171,7 @@ body {
 #submit-info-button:hover {
     background-color: #1565C0;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
 }
 
 /* 保持原有設計風格的其他區域 */
@@ -180,14 +195,14 @@ button {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
     margin: 10px;
 }
 
 button:hover {
     background-color: #0056b3;
+    transform: translateY(-3px);
 }
-
 
 #demo-result-container {
     background-color: #ffffff;
@@ -197,6 +212,11 @@ button:hover {
     max-width: 600px;
     margin: 40px auto;
     text-align: center;
+    transition: transform 0.3s;
+}
+
+#demo-result-container:hover {
+    transform: scale(1.03);
 }
 
 #demo-result-container h2 {
@@ -232,18 +252,17 @@ button:hover {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 #start-real-quiz-button:hover {
     background-color: #0056b3;
+    transform: translateY(-3px);
 }
 
 #start-real-quiz-button:focus {
     outline: none;
 }
-
-
 
 /* 測驗區域的樣式 */
 #quiz-container {
@@ -274,15 +293,14 @@ video {
     border-radius: 8px;
     width: 100%;
     height: 400px;
-    pointer-events: none;  /* 禁止所有與影片的滑鼠互動，確保影片無法被點擊控制 */
-    user-select: none;     /* 禁止選擇，避免拖動影片 */
-    outline: none;         /* 移除任何焦點樣式 */
+    pointer-events: none;
+    user-select: none;
+    outline: none;
+    transition: filter 0.3s;
 }
 
-
-/* 輸入表單的 hover 效果 */
-#basic-info-form input:hover, #basic-info-form select:hover {
-    border-color: #1E88E5;
+video:hover {
+    filter: brightness(1.1);
 }
 
 /* 按鈕在測驗區域的樣式 */
@@ -294,10 +312,12 @@ video {
     color: white;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 #quiz-container button:hover {
     background-color: #218838;
+    transform: translateY(-3px);
 }
 
 /* 隱藏區域 */
@@ -351,6 +371,13 @@ textarea {
     font-size: 16px;
     box-sizing: border-box;
     resize: vertical;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s;
+}
+
+textarea:hover {
+    border-color: #1E88E5;
 }
 
 /* 結果區設計 */
@@ -360,6 +387,11 @@ textarea {
     background-color: #f8f9fa;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+#result-container:hover {
+    transform: scale(1.02);
 }
 
 .question-block {
@@ -372,20 +404,11 @@ textarea {
     font-weight: bold;
 }
 
-#result-container {
-    margin: 20px auto;
-    text-align: center;
-    width: 80%;
-    background-color: #f9f9fa;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
 #result-table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
+    transition: transform 0.3s;
 }
 
 #result-table th, #result-table td {
@@ -425,6 +448,7 @@ textarea {
     font-size: 18px;
     min-width: 400px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s;
 }
 
 .styled-table td {
@@ -444,6 +468,7 @@ textarea {
 
 .styled-table tr:hover {
     background-color: #f1f1f1;
+    transform: scale(1.02);
 }
 
 .styled-table td:first-child {
