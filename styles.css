@@ -9,20 +9,7 @@ body {
     align-items: center;
     box-sizing: border-box;
     color: #212121;
-    transition: background 0.5s ease-in-out;
-}
-
-body:hover {
-    background: linear-gradient(135deg, #a18cd1, #fbc2eb, #e0f7fa);
-}
-
-.question-block {
-    background: linear-gradient(135deg, #e0e7ff, #f8f9fa);
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: $1 0.6s ease;
 }
 
 .question-block:hover {
@@ -53,7 +40,7 @@ body:hover {
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: $1 0.6s ease;
 }
 
 .options label:hover {
@@ -72,10 +59,10 @@ body:hover {
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     width: 85%;
-    max-width: 600px;
+    width: 90%;
     margin-bottom: 40px;
     text-align: left;
-    transition: background-color 0.3s;
+    transition: $1 0.6s ease;
 }
 
 #survey-intro:hover {
@@ -103,7 +90,7 @@ body:hover {
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: $1 0.6s ease;
 }
 
 #survey-intro button:hover {
@@ -118,10 +105,10 @@ body:hover {
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     width: 85%;
-    max-width: 600px;
+    width: 90%;
     margin-bottom: 40px;
     text-align: center;
-    transition: transform 0.3s;
+    transition: $1 0.6s ease;
 }
 
 #basic-info-form:hover {
@@ -144,7 +131,7 @@ body:hover {
     box-sizing: border-box;
     font-size: 16px;
     background-color: #fafafa;
-    transition: border-color 0.3s;
+    transition: $1 0.6s ease;
 }
 
 #basic-info-form input:hover, #basic-info-form select:hover {
@@ -159,9 +146,9 @@ body:hover {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    transition: $1 0.6s ease;
     width: 100%;
-    max-width: 400px;
+    width: 90%;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     margin-top: 10px;
     margin: 0 auto;
@@ -180,7 +167,7 @@ body:hover {
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    max-width: 900px;
+    width: 90%;
     width: 100%;
     text-align: center;
     margin-top: 20px;
@@ -195,7 +182,7 @@ button {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: $1 0.6s ease;
     margin: 10px;
 }
 
@@ -209,10 +196,10 @@ button:hover {
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    max-width: 600px;
+    width: 90%;
     margin: 40px auto;
     text-align: center;
-    transition: transform 0.3s;
+    transition: $1 0.6s ease;
 }
 
 #demo-result-container:hover {
@@ -252,7 +239,7 @@ button:hover {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: $1 0.6s ease;
 }
 
 #start-real-quiz-button:hover {
@@ -270,7 +257,7 @@ button:hover {
     padding: 40px;
     border-radius: 12px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    max-width: 900px;
+    width: 90%;
     width: 100%;
     text-align: center;
 }
@@ -296,7 +283,7 @@ video {
     pointer-events: none;
     user-select: none;
     outline: none;
-    transition: filter 0.3s;
+    transition: $1 0.6s ease;
 }
 
 video:hover {
@@ -312,7 +299,7 @@ video:hover {
     color: white;
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: $1 0.6s ease;
 }
 
 #quiz-container button:hover {
@@ -342,7 +329,7 @@ video:hover {
     border: none;
     border-radius: 30px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: $1 0.6s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -373,7 +360,7 @@ textarea {
     resize: vertical;
     border-radius: 4px;
     border: 1px solid #ccc;
-    transition: border-color 0.3s;
+    transition: $1 0.6s ease;
 }
 
 textarea:hover {
@@ -382,13 +369,13 @@ textarea:hover {
 
 /* 結果區設計 */
 #result-container {
-    margin: 20px auto;
-    text-align: center;
-    width: 80%;
-    background-color: #f9f9fa;
-    border-radius: 8px;
+    margin-top: 40px;
     padding: 20px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: $1 0.6s ease;
+    width: 90%;
 }
 
 #result-container:hover {
@@ -409,12 +396,12 @@ textarea:hover {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
-    transition: transform 0.5s;
+    transition: $1 0.6s ease;
 }
 
 #result-table th, #result-table td {
     border: 1px solid #ddd;
-    padding: 12px;
+    padding: 16px;
 }
 
 #result-table th {
@@ -447,13 +434,13 @@ textarea:hover {
     margin: 20px auto;
     border-collapse: collapse;
     font-size: 18px;
-    min-width: 400px;
+    min-width: 600px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s;
+    transition: $1 0.6s ease;
 }
 
 .styled-table td {
-    padding: 12px 15px;
+    padding: 16px 20px;
     border: 1px solid #ddd;
     text-align: center;
 }
