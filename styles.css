@@ -318,6 +318,14 @@ video:hover {
     transform: translateY(-3px);
 }
 
+input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+    accent-color: #ff9a9e;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
 /* 隱藏區域 */
 .hidden {
     display: none;
