@@ -1,7 +1,7 @@
-/* 設置淡藍ins風格背景及動畫 */
+/* 設置漸變背景及動畫，使用新的色號 #43CBFF 和 #9708CC */
 body {
     font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(135deg, #cfd9df, #e2ebf0);
+    background: linear-gradient(135deg, #43CBFF, #9708CC);
     background-size: 400% 400%;
     animation: gradientBackground 15s ease infinite;
     margin: 0;
@@ -71,7 +71,7 @@ body {
 
 .options input[type="radio"] {
     margin-right: 15px;
-    accent-color: #a8c0ff;
+    accent-color: #43CBFF;
 }
 
 /* 問卷介紹區塊設計 */
@@ -103,7 +103,7 @@ body {
 }
 
 #survey-intro button {
-    background-color: #a8c0ff;
+    background-color: #43CBFF;
     color: white;
     padding: 15px 30px;
     border: none;
@@ -114,7 +114,7 @@ body {
 }
 
 #survey-intro button:hover {
-    background-color: #8aa8ff;
+    background-color: #9708CC;
     transform: scale(1.05);
 }
 
@@ -132,7 +132,7 @@ body {
 }
 
 .styled-table thead tr {
-    background-color: #a8c0ff;
+    background-color: #43CBFF;
     color: #fff;
     font-weight: bold;
 }
@@ -187,12 +187,12 @@ body {
 }
 
 #basic-info-form input:focus, #basic-info-form select:focus {
-    border-color: #a8c0ff;
+    border-color: #43CBFF;
     outline: none;
 }
 
 #submit-info-button {
-    background: linear-gradient(to right, #a8c0ff, #fbc2eb);
+    background: linear-gradient(to right, #43CBFF, #9708CC);
     color: #fff;
     border: none;
     border-radius: 30px;
@@ -203,32 +203,32 @@ body {
 }
 
 #submit-info-button:hover {
-    background: linear-gradient(to right, #8aa8ff, #f8a5d8);
+    background: linear-gradient(to right, #9708CC, #43CBFF);
     transform: translateY(-5px);
 }
 
 /* 測驗區設計 */
 #quiz-container {
-    background: #ffffff;
-    padding: 80px;
-    border-radius: 25px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    max-width: 1400px;
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    max-width: 1100px;
     width: 100%;
     text-align: center;
-    margin-top: 50px;
-    transition: all 0.4s ease;
+    height: 100%;
+    margin: auto;
 }
 
 #quiz-container:hover {
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
 }
 
 /* 一般按鈕設計 */
 button {
     padding: 15px 30px;
     font-size: 22px;
-    background: #a8c0ff;
+    background: #43CBFF;
     color: #fff;
     border: none;
     border-radius: 20px;
@@ -238,7 +238,7 @@ button {
 }
 
 button:hover {
-    background: #8aa8ff;
+    background: #9708CC;
     transform: translateY(-5px);
 }
 
@@ -259,7 +259,7 @@ button:hover {
 }
 
 #result-container h2 {
-    color: #a8c0ff;
+    color: #43CBFF;
     font-size: 30px;
     margin-bottom: 25px;
 }
@@ -285,7 +285,7 @@ button:hover {
 }
 
 #result-table th {
-    background-color: #a8c0ff;
+    background-color: #43CBFF;
     color: #fff;
     font-weight: bold;
 }
@@ -329,7 +329,7 @@ button:hover {
 input[type="checkbox"] {
     width: 30px;
     height: 30px;
-    accent-color: #a8c0ff;
+    accent-color: #43CBFF;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.4s ease;
@@ -358,12 +358,12 @@ textarea {
 }
 
 textarea:focus {
-    border-color: #a8c0ff;
+    border-color: #43CBFF;
     outline: none;
 }
 
 textarea:hover {
-    border-color: #a8c0ff;
+    border-color: #43CBFF;
 }
 
 /* 加強動態效果，讓網頁更有流暢感 */
@@ -372,12 +372,12 @@ textarea:hover {
 }
 
 /* 圖片視頻hover效果 */
-img, video {
+video {
     border-radius: 15px;
     transition: all 0.4s ease;
 }
 
-img:hover, video:hover {
+video:hover {
     filter: brightness(1.1);
     transform: scale(1.05);
 }
@@ -423,7 +423,7 @@ nav {
 }
 
 nav a {
-    color: #a8c0ff;
+    color: #43CBFF;
     text-decoration: none;
     font-weight: bold;
     font-size: 20px;
@@ -432,12 +432,12 @@ nav a {
 }
 
 nav a:hover {
-    color: #8aa8ff;
+    color: #9708CC;
     transform: scale(1.1);
 }
 
 nav .logo {
     font-size: 28px;
     font-weight: bold;
-    color: #a8c0ff;
+    color: #43CBFF;
 }
