@@ -128,7 +128,7 @@ const questions = [
 ];
 
 const demoQuestion = {
-    question: "請選擇號誌含意...",
+    question: "是範例題:請選擇號誌含意...",
     options: ["保護左轉", "非保護左轉", "不能左轉"],
     answer: 2,  
     video: "video0.mp4"
@@ -327,7 +327,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const demoResultContainer = document.createElement("div");
         demoResultContainer.id = "demo-result-container";
         demoResultContainer.innerHTML = `
-            <h2>示範結果</h2>
+            <h2>您的作答結果</h2>
             <p>${correct ? "答對了！" : "答錯了！正確答案是：停下"}</p>
             <p>您的反應時間是: ${timeTaken.toFixed(2)} 秒</p>
             <button id="start-real-quiz-button">開始正式測驗</button>
