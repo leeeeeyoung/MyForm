@@ -12,9 +12,8 @@ body {
 }
 
 
-
 .question-block {
-    background: linear-gradient(135deg, #f8f9fa, #e0e7ff);
+    background: linear-gradient(135deg, #e0e7ff, #f8f9fa);
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
@@ -32,14 +31,14 @@ body {
     display: flex;
     justify-content: space-around;
     padding: 10px;
-    background: linear-gradient(135deg, #e0f7fa, #e1bee7);
+    background: linear-gradient(135deg, #e1bee7, #e0f7fa);
     border-radius: 10px;
 }
 
 .options label {
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #ffffff, #f0f4c3);
+    background: linear-gradient(135deg, #f0f4c3, #ffffff);
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -54,7 +53,6 @@ body {
 .options input[type="radio"] {
     margin-right: 8px;
 }
-
 
 
 
