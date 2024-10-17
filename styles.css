@@ -212,6 +212,54 @@ body {
     transform: translateY(-5px);
 }
 
+
+/* 開始按鈕樣式設計 */
+#start-button {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.4s ease;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#start-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* 主要標題樣式設計 */
+#main-menu h1 {
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+
+/* 規則列表樣式設計 */
+ol {
+    list-style-type: decimal;
+    padding-left: 20px;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+ol li {
+    margin-bottom: 10px;
+}
+
+ol li strong {
+    color: #ff0000;
+}
+
+
+
 /* 測驗區設計 */
 #quiz-container {
     background-color: white;
