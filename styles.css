@@ -243,14 +243,14 @@ video {
 /* 一般按鈕設計 */
 button {
     padding: 15px 30px;
-    font-size: 22px;
+    font-size: 30px;
     background: #43CBFF;
-    color: #fff;
+    color: #ffffff;
     border: none;
     border-radius: 20px;
     cursor: pointer;
     transition: all 0.4s ease;
-    margin: 20px;
+    margin: 20px auto;
 }
 
 button:hover {
