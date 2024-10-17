@@ -377,35 +377,44 @@ button:hover {
 }
 
 /* 按鈕選項區域設計 */
+
 .button-options {
     display: flex;
     flex-wrap: wrap;
-    gap: 25px;
-    justify-content: space-between;
-    margin-top: 20px;
-    width: 100%;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 10px;
 }
 
 .button-options button {
-    padding: 18px 36px;
-    font-size: 20px;
+    padding: 12px 24px;
+    font-size: 18px;
     color: #ffffff;
     background-color: #007bff;
     border: none;
-    border-radius: 25px;
+    border-radius: 30px;
     cursor: pointer;
     transition: all 0.4s ease;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 
 .button-options button:hover {
     background-color: #0056b3;
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
+
+.button-options button:active {
+    transform: translateY(1px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.button-options button.active {
+    background-color: #004085;
+}
+
+
 
 /* 樣式調整過的checkbox */
 input[type="checkbox"] {
