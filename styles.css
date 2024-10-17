@@ -175,15 +175,14 @@ body {
 
 #basic-info-form input, #basic-info-form select {
     width: 100%;
-    padding: 20px;
-    margin-bottom: 30px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
-    font-size: 18px;
-    background-color: #f0f4f8;
-    color: #333;
-    transition: all 0.4s ease;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #fafafa;
+    transition: $1 0.6s ease;
 }
 
 #basic-info-form input:focus, #basic-info-form select:focus {
