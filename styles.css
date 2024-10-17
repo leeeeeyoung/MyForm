@@ -303,20 +303,20 @@ video {
 
 /* 一般按鈕設計 */
 button {
-    padding: 15px 30px;
-    font-size: 20px;
-    background: #43CBFF;
-    color: #ffffff;
+    padding: 16px 36px;
+    font-size: 24px;
+    background-color: #007bff;
+    color: white;
     border: none;
-    border-radius: 20px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: all 0.4s ease;
-    margin: 20px auto;
+    transition: $1 0.6s ease;
+    margin: 10px;
 }
 
 button:hover {
-    background: #9708CC;
-    transform: translateY(-5px);
+    background-color: #0056b3;
+    transform: translateY(-3px);
 }
 
 /* 結果區設計 */
