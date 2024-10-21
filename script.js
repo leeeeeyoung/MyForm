@@ -128,7 +128,7 @@ const questions = [
 ];
 
 const demoQuestion = {
-    question: "是範例題:請選擇號誌含意...",
+    question: "示範例題:請選擇號誌含意...",
     options: ["保護左轉", "非保護左轉", "不能左轉"],
     answer: 2,  
     video: "video0.mp4"
