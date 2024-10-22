@@ -190,7 +190,38 @@ document.addEventListener("DOMContentLoaded", () => {
             userInfo.experience = experience;
             userInfo.commute = commute;
 
-            apiEndpoint = "https://formspree.io/f/mjkbzwwa";
+            // 亂數產生 0 或 1
+            const randomNum = Math.floor(Math.random() * 9);
+
+            // 根據亂數結果決定 API URL
+            if (randomNum == 0) {
+                apiEndpoint = "https://formspree.io/f/mblrbdal";
+            }
+            else if (randomNum == 1) {
+                apiEndpoint = "https://formspree.io/f/mjkbzwwa";
+            }
+            else if (randomNum == 2) {
+                apiEndpoint = "https://formspree.io/f/xovabdwa";
+            }
+            else if (randomNum == 3) {
+                apiEndpoint = "https://formspree.io/f/mgvwqkye";
+            }
+            else if (randomNum == 4) {
+                apiEndpoint = "https://formspree.io/f/mpwandrw";
+            }
+            else if (randomNum == 5) {
+                apiEndpoint = "https://formspree.io/f/mkgwerbo";
+            }
+            else if (randomNum == 6) {
+                apiEndpoint = "https://formspree.io/f/mwpezobo";
+            }
+            else if (randomNum == 7) {
+                apiEndpoint = "https://formspree.io/f/mrbzdqkk";
+            } else {
+                apiEndpoint = "https://formspree.io/f/xldrvbjv";
+            }
+
+            // apiEndpoint = "https://formspree.io/f/mjkbzwwa";
 
             const form = document.getElementById("basic-info-form");
             form.action = apiEndpoint;
