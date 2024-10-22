@@ -139,7 +139,7 @@ body {
 
 .styled-table th,
 .styled-table td {
-    padding: 12px; /* 調整內邊距 */
+    padding: 10px; /* 調整內邊距 */
     border-bottom: 1px solid #ddd;
 }
 
@@ -410,8 +410,8 @@ button:hover {
 
 /* 樣式調整過的checkbox */
 input[type="checkbox"] {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     accent-color: #43CBFF;
     border-radius: 5px;
     cursor: pointer;
